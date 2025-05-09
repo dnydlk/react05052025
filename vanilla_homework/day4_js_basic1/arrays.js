@@ -6,13 +6,10 @@ export function checkIfStringIsNumber(str) {
   //   returns a boolean indicating if the str is a number
   //   Example:
   //   '1' -> true, "a" -> false, "1a" -> false
-
   if (str.length === 0) return false
   return !isNaN(str)
-  /*
-  Can't use Number(str), typeof str === "string"
-  Because typeof NaN is "number"
-   */
+  // Can't use Number(str), typeof str === "string"
+  // Because typeof NaN is "number"
 }
 
 export function findAvgOfNums(arr) {
@@ -20,10 +17,6 @@ export function findAvgOfNums(arr) {
   //   argument and returns the average of all the numbers.
   //   Example: const arr = [1, '2', 3, '4', 5];
   //   Expected output: 3
-
-  // if (arr.some((each) => isNaN(each))) return 0
-  // return arr.reduce((acc, num) => acc + Number(num), 0) / arr.length
-
   let totalNum = 0
   for (const each of arr) {
     if (isNaN(each)) return 0
@@ -53,7 +46,6 @@ export function findAvgAgeByJob(people, job) {
   //   Do not use prototype methods
   //   Example: const people = [{name: 'John', age: 21, job: 'teacher'}, {name: 'Alice', age: 25, job: 'teacher'}];
   //   Expected output: 23 (teacher)
-
   let totalAge = 0
   let sameJobCount = 0
   for (const p of people) {
@@ -70,7 +62,6 @@ export function findMaxNum(arr) {
   //   returns the maximum number in that array.
   //   Do not use Math.max
   //   Example: const arr = [1, 2, 3, 4, 5];
-
   if (arr.length === 0) return 0
 
   let currMax = arr[0]
@@ -85,7 +76,6 @@ export function findLongestWord(str) {
   //   returns the longest word in that string.
   //   Hint: You can use String.prototype.split
   //   Example: const str = 'I love JavaScript';
-
   if (str.length === 0) return ""
 
   const strArr = str.split(" ")
@@ -101,7 +91,6 @@ export function findSumOfEvenNums(arr) {
   //   returns an array of only the even numbers.
   //   Example: const arr = [1, 2, 3, 4, 5];
   //   Expected output: [2, 4]
-
   if (arr.length === 0) return []
 
   const evenNumArr = []
@@ -118,7 +107,6 @@ export function bubbleSortArr1(num) {
   // Do not use Array.prototype.sort
   // Example: const num = [5, 3, 8, 2, 1];
   // Expected output: [1, 2, 3, 5, 8]
-
   for (let i = 0; i < num.length; i++) {
     let haveSwapped = false
     for (let j = 0; j < num.length - i - 1; j++) {
@@ -138,7 +126,6 @@ export function bubbleSortArr1(num) {
 
 export function bubbleSortArr2(num) {
   // Same as above but this time returns the original array reference sorted.
-
   for (let i = 0; i < num.length; i++) {
     let haveSwapped = false
     for (let j = 0; j < num.length - i - 1; j++) {
@@ -158,7 +145,6 @@ export function removeTypes(arr, typeToRemove) {
   // Example: const arr = [1, '2', 3, '4', 5];
   // removeTypes(arr, 'string');
   // Expected output: [1, 3, 5]
-
   if (arr.length === 0) return []
 
   const outputArr = []
@@ -176,7 +162,6 @@ export function changeNumsByAmount(nums, amount, operator) {
   // Example: const nums = [1, 2, 3, 4, 5];
   // changeNumsByAmount(nums, 2, '+');
   // Expected output: [3, 4, 5, 6, 7]
-
   const outputArr = []
   if (operator === "+") {
     for (const n of nums) {
@@ -211,5 +196,3 @@ export function removeNumFromArr(nums, num) {
   }
   return outputArr
 }
-
-//! todo: clean up code
