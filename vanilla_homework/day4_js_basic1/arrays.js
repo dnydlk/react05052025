@@ -98,3 +98,5 @@ export function removeNumFromArr(nums, num) {
   // removeNumFromArr(nums, 3);
   // Expected output: [1, 2, 4, 5]
 }
+
+//! todo: clean up code
