@@ -72,14 +72,13 @@ export function findMaxNum(arr) {
   //   Example: const arr = [1, 2, 3, 4, 5];
 
   if (arr.length === 0) return 0
-  
+
   let currMax = arr[0]
-  for (const a of arr) {
-    currMax = a > currMax ? a : currMax
+  for (let i = 1; i < arr.length; i++) {
+    currMax = arr[i] > currMax ? arr[i] : currMax
   }
   return currMax
 }
-
 
 export function findLongestWord(str) {
   //   Write a function that takes a string as an argument and
