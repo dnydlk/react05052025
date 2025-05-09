@@ -24,13 +24,13 @@ export function findAvgOfNums(arr) {
   // if (arr.some((each) => isNaN(each))) return 0
   // return arr.reduce((acc, num) => acc + Number(num), 0) / arr.length
 
-  let sum = 0
+  let totalNum = 0
   for (const each of arr) {
     if (isNaN(each)) return 0
 
-    sum += Number(each)
+    totalNum += Number(each)
   }
-  return sum / arr.length
+  return totalNum / arr.length
 }
 
 export function findAverageAge(people) {
@@ -39,12 +39,12 @@ export function findAverageAge(people) {
   //   Do not use prototype methods
   //   Example: const people = [{name: 'John', age: 21}, {name: 'Alice', age: 25}];
   if (people.length === 0) return 0
-  
-  let sum = 0
+
+  let totalAge = 0
   for (const p of people) {
-    sum += p.age
+    totalAge += p.age
   }
-  return sum / people.length
+  return totalAge / people.length
 }
 
 export function findAvgAgeByJob(people, job) {
