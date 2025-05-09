@@ -176,6 +176,26 @@ export function changeNumsByAmount(nums, amount, operator) {
   // Example: const nums = [1, 2, 3, 4, 5];
   // changeNumsByAmount(nums, 2, '+');
   // Expected output: [3, 4, 5, 6, 7]
+
+  const outputArr = []
+  if (operator === "+") {
+    for (const n of nums) {
+      outputArr.push(n + amount)
+    }
+  } else if (operator === "-") {
+    for (const n of nums) {
+      outputArr.push(n - amount)
+    }
+  } else if (operator === "*") {
+    for (const n of nums) {
+      outputArr.push(n * amount)
+    }
+  } else if (operator === "/") {
+    for (const n of nums) {
+      outputArr.push(n / amount)
+    }
+  }
+  return outputArr
 }
 
 export function removeNumFromArr(nums, num) {
