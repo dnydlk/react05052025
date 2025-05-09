@@ -108,7 +108,6 @@ export function findSumOfEvenNums(arr) {
   for (const a of arr) {
     if (a % 2 === 0) evenNumArr.push(a)
   }
-  console.log(evenNumArr)
   return evenNumArr
 }
 
@@ -119,6 +118,22 @@ export function bubbleSortArr1(num) {
   // Do not use Array.prototype.sort
   // Example: const num = [5, 3, 8, 2, 1];
   // Expected output: [1, 2, 3, 5, 8]
+
+  for (let i = 0; i < num.length; i++) {
+    let haveSwapped = false
+    for (let j = 0; j < num.length - i - 1; j++) {
+      if (num[j] > num[j + 1]) {
+        ;[num[j], num[j + 1]] = [num[j + 1], num[j]]
+        haveSwapped = true
+      }
+    }
+    if (!haveSwapped) break
+  }
+
+  const sortedArr = []
+  for (const n of num) sortedArr.push(n)
+
+  return sortedArr
 }
 
 export function bubbleSortArr2(num) {
