@@ -85,6 +85,15 @@ export function findLongestWord(str) {
   //   returns the longest word in that string.
   //   Hint: You can use String.prototype.split
   //   Example: const str = 'I love JavaScript';
+
+  if (str.length === 0) return ""
+  
+  const strArr = str.split(" ")
+  let currMaxStr = strArr[0]
+  for (let i = 1; i < strArr.length; i++) {
+    currMaxStr = strArr[i].length > currMaxStr.length ? strArr[i] : currMaxStr
+  }
+  return currMaxStr
 }
 
 export function findSumOfEvenNums(arr) {
