@@ -204,6 +204,12 @@ export function removeNumFromArr(nums, num) {
   // Example: const nums = [1, 2, 3, 3, 3, 4, 5];
   // removeNumFromArr(nums, 3);
   // Expected output: [1, 2, 4, 5]
+  const outputArr = []
+  for (const n of nums) {
+    if (n === num) continue
+    outputArr.push(n)
+  }
+  return outputArr
 }
 
 //! todo: clean up code
