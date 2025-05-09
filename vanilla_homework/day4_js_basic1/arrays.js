@@ -87,7 +87,7 @@ export function findLongestWord(str) {
   //   Example: const str = 'I love JavaScript';
 
   if (str.length === 0) return ""
-  
+
   const strArr = str.split(" ")
   let currMaxStr = strArr[0]
   for (let i = 1; i < strArr.length; i++) {
@@ -101,6 +101,15 @@ export function findSumOfEvenNums(arr) {
   //   returns an array of only the even numbers.
   //   Example: const arr = [1, 2, 3, 4, 5];
   //   Expected output: [2, 4]
+
+  if (arr.length === 0) return []
+
+  const evenNumArr = []
+  for (const a of arr) {
+    if (a % 2 === 0) evenNumArr.push(a)
+  }
+  console.log(evenNumArr)
+  return evenNumArr
 }
 
 // reference types
