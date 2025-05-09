@@ -38,6 +38,13 @@ export function findAverageAge(people) {
   //   returns the average age of all the people.
   //   Do not use prototype methods
   //   Example: const people = [{name: 'John', age: 21}, {name: 'Alice', age: 25}];
+  if (people.length === 0) return 0
+  
+  let sum = 0
+  for (const p of people) {
+    sum += p.age
+  }
+  return sum / people.length
 }
 
 export function findAvgAgeByJob(people, job) {
