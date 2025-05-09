@@ -53,6 +53,16 @@ export function findAvgAgeByJob(people, job) {
   //   Do not use prototype methods
   //   Example: const people = [{name: 'John', age: 21, job: 'teacher'}, {name: 'Alice', age: 25, job: 'teacher'}];
   //   Expected output: 23 (teacher)
+
+  let totalAge = 0
+  let sameJobCount = 0
+  for (const p of people) {
+    if (p.job === job) {
+      totalAge += p.age
+      sameJobCount++
+    }
+  }
+  return totalAge === 0 ? 0 : totalAge / sameJobCount
 }
 
 export function findMaxNum(arr) {
