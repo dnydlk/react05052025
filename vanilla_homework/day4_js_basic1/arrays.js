@@ -6,6 +6,13 @@ export function checkIfStringIsNumber(str) {
   //   returns a boolean indicating if the str is a number
   //   Example:
   //   '1' -> true, "a" -> false, "1a" -> false
+
+  if (str.length === 0) return false
+  return !isNaN(str)
+  /*
+  Can't use Number(str), typeof str === "string"
+  Because typeof NaN is "number"
+   */
 }
 
 export function findAvgOfNums(arr) {
