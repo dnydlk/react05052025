@@ -138,6 +138,18 @@ export function bubbleSortArr1(num) {
 
 export function bubbleSortArr2(num) {
   // Same as above but this time returns the original array reference sorted.
+
+  for (let i = 0; i < num.length; i++) {
+    let haveSwapped = false
+    for (let j = 0; j < num.length - i - 1; j++) {
+      if (num[j] > num[j + 1]) {
+        ;[num[j], num[j + 1]] = [num[j + 1], num[j]]
+        haveSwapped = true
+      }
+    }
+    if (!haveSwapped) break
+  }
+  return num
 }
 
 export function removeTypes(arr, typeToRemove) {
