@@ -158,6 +158,15 @@ export function removeTypes(arr, typeToRemove) {
   // Example: const arr = [1, '2', 3, '4', 5];
   // removeTypes(arr, 'string');
   // Expected output: [1, 3, 5]
+
+  if (arr.length === 0) return []
+
+  const outputArr = []
+  for (const a of arr) {
+    if (typeof a === typeToRemove) continue
+    outputArr.push(a)
+  }
+  return outputArr
 }
 
 // reinvent the wheel: prototype methods
