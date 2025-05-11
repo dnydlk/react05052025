@@ -104,6 +104,7 @@ export function destructureArray3() {
   const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
   // destructure the first 3 elements, and use rest operator to get the rest of the elements
   // Write your code here
+  const [first, second, third, ...rest] = arr
 }
 
 export function spreadObj() {
