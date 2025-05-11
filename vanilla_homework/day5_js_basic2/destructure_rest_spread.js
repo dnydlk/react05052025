@@ -65,6 +65,9 @@ export function destructureArray1() {
   // expected output: "1 5"
   const arr = [1, 2, 3, 4, 5];
   // Write your code here
+  const [first, ...rest] = arr
+  const last = rest[rest.length - 1]
+  console.log(first, last);
 }
 
 export function destructureArray2() {
