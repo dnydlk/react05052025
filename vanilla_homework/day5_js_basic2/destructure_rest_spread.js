@@ -57,6 +57,7 @@ export function destructurePerson4() {
 
   // destructure the name and age of person4, and use rest operator to get the rest of the properties
   // write your code here
+  const { name, age, ...rest} = person
 }
 
 export function destructureArray1() {
