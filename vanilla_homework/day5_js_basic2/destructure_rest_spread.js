@@ -24,6 +24,7 @@ export function destructurePerson2() {
     },
   };
   // Write your code here
+  console.log(`${person.name} is ${person.age} years old and lives in ${person.address.city}`)
 }
 
 export function destructurePerson3() {
