@@ -90,10 +90,7 @@ export function destructureArray2() {
 
   // destructure the methods from the array, and call them
   // Write your code here
-  const [GET, ...rest1] = methods
-  const [POST, ...rest2] = rest1
-  const [PUT, ...rest3] = rest2
-  const [DELETE] = rest3
+  const [GET, POST, PUT, DELETE] = methods
   console.log(GET());
   console.log(POST());
   console.log(PUT());
