@@ -6,9 +6,9 @@ export function destructurePerson1() {
     name: "Alice",
     age: 25,
     job: "teacher",
-  };
+  }
   // Write your code here
-  console.log(`${person.name} is ${person.age} years old and is a ${person.job}`);
+  console.log(`${person.name} is ${person.age} years old and is a ${person.job}`)
 }
 
 export function destructurePerson2() {
@@ -22,15 +22,17 @@ export function destructurePerson2() {
       city: "New York",
       country: "USA",
     },
-  };
+  }
   // Write your code here
-  console.log(`${person.name} is ${person.age} years old and lives in ${person.address.city}`)
+  console.log(
+    `${person.name} is ${person.age} years old and lives in ${person.address.city}`
+  )
 }
 
 export function destructurePerson3() {
   // descture but change the variable names
 
-  const name = "NAME ALREADY EXIST";
+  const name = "NAME ALREADY EXIST"
   // if you do const {name} = person,
   // there'd be an error because name already exists
 
@@ -38,7 +40,7 @@ export function destructurePerson3() {
     name: "Alice",
     age: 25,
     job: "teacher",
-  };
+  }
 
   // Write your code here
   const { name: personName, age, job } = person
@@ -53,45 +55,53 @@ export function destructurePerson4() {
     salary: 50000,
     hobby: "reading",
     favFood: "pizza",
-  };
+  }
 
   // destructure the name and age of person4, and use rest operator to get the rest of the properties
   // write your code here
-  const { name, age, ...rest} = person
+  const { name, age, ...rest } = person
 }
 
 export function destructureArray1() {
   // destructure and get the first and last elements of the array
   // expected output: "1 5"
-  const arr = [1, 2, 3, 4, 5];
+  const arr = [1, 2, 3, 4, 5]
   // Write your code here
   const [first, ...rest] = arr
   const last = rest[rest.length - 1]
-  console.log(first, last);
+  console.log(first, last)
 }
 
 export function destructureArray2() {
   const methods = [
     function () {
-      return "GET";
+      return "GET"
     },
     function () {
-      return "POST";
+      return "POST"
     },
     function () {
-      return "PUT";
+      return "PUT"
     },
     function () {
-      return "DELETE";
+      return "DELETE"
     },
-  ];
+  ]
 
   // destructure the methods from the array, and call them
   // Write your code here
+  const [GET, ...rest1] = methods
+  const [POST, ...rest2] = rest1
+  const [PUT, ...rest3] = rest2
+  const [DELETE] = rest3
+  console.log(GET());
+  console.log(POST());
+  console.log(PUT());
+  console.log(DELETE());
 }
 
 export function destructureArray3() {
-  const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
   // destructure the first 3 elements, and use rest operator to get the rest of the elements
   // Write your code here
 }
@@ -101,7 +111,7 @@ export function spreadObj() {
     name: "Alice",
     age: 25,
     job: "teacher",
-  };
+  }
   // 1. use spread operator to create a new object with the same properties as person
   // const person1 =
 
@@ -115,14 +125,14 @@ export function spreadObj() {
     salary: 50000,
     hobby: "reading",
     favFood: "pizza",
-  };
+  }
   // 4. use spread operator to merge the additionalInfo object with the person object
   // const person4 =
 }
 
 export function spreadArr() {
-  const arr1 = [1, 2, 3];
-  const arr2 = [4, 5, 6];
+  const arr1 = [1, 2, 3]
+  const arr2 = [4, 5, 6]
   // 1. use spread operator to create a new array that combines arr1 and arr2
   // const arr3 =
 
