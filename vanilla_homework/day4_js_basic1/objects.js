@@ -32,6 +32,11 @@ export function cancelExpiredEvents(events) {
   //   event3: {name: 'Christmas Party', date: '2024-12-25', isCanceled: false}
   // ];
   // Expected events: // an array of events, but event1 and event2 are canceled, event3 is not canceled
+  for (const e of events) {
+    if (new Date(e.date) < new Date()) {
+      e.isCanceled = true
+    }
+  }
 }
 
 export function findEventByType(events, type) {
