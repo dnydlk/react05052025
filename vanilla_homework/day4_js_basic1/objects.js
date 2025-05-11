@@ -19,6 +19,7 @@ export function changeValueOf(obj, key, value) {
   // Example 2: const obj = {name: 'Alice', age: 25};
   // changeValueOf(obj, 'job', 'teacher');
   // Expected obj: {name: 'Alice', age: 25, job: 'teacher'}
+  obj[key] = value
 }
 
 export function cancelExpiredEvents(events) {
