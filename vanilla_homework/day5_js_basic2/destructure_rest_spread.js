@@ -41,6 +41,7 @@ export function destructurePerson3() {
   };
 
   // Write your code here
+  const { name: personName, age, job } = person
 }
 
 export function destructurePerson4() {
