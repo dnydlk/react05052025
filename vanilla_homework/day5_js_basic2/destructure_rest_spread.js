@@ -132,12 +132,13 @@ export function spreadArr() {
   const arr1 = [1, 2, 3]
   const arr2 = [4, 5, 6]
   // 1. use spread operator to create a new array that combines arr1 and arr2
-  // const arr3 =
+  const arr3 = [...arr1, ...arr2]
 
   // 2. use spread operator to create a new array that combines arr1 and arr2, but add a new element, 7
   // expected arr4: [1, 2, 3, 4, 5, 6, 7]
-  // const arr4 =
+  const arr4 = [...arr1, ...arr2, 7]
 
   // 3. combine arr1 and arr2, but add a new element, 0, at the beginning
   // expected arr5: [0, 1, 2, 3, 4, 5, 6]
+  const arr5 = [0, ...arr1, ...arr2]
 }
