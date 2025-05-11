@@ -48,4 +48,6 @@ export function findEventByType(events, type) {
   // ];
   // findEventByType(events, 'private');
   // Expected output: [{name: 'Birthday Party', type: 'private'}, {name: 'Christmas Party', type: 'private'}]
+  const res = events.filter((e) => e.type === type)
+  return res
 }
