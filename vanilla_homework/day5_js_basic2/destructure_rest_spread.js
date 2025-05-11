@@ -111,13 +111,13 @@ export function spreadObj() {
     job: "teacher",
   }
   // 1. use spread operator to create a new object with the same properties as person
-  // const person1 =
+  const person1 = {...person}
 
   // 2. step 1, but change the name to "Bob"
-  // const person2 =
+  const person2 = {...person, name:"Bob"}
 
   // 3. step 1, but add a new property, hobby: "reading"
-  // const person3 =
+  const person3 = {...person, hobby:"reading"}
 
   const additionalInfo = {
     salary: 50000,
@@ -125,7 +125,7 @@ export function spreadObj() {
     favFood: "pizza",
   }
   // 4. use spread operator to merge the additionalInfo object with the person object
-  // const person4 =
+  const person4 = {...person, ...additionalInfo}
 }
 
 export function spreadArr() {
