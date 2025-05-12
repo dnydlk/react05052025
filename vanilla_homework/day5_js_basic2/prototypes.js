@@ -103,6 +103,8 @@ export function myPush(arr, val) {
   // Example: const arr = [1, 2, 3, 4, 5];
   // myPush(arr, 6);
   // Expected output: [1, 2, 3, 4, 5, 6]
+  arr[arr.length] = val
+  return arr
 }
 
 export function myReverse1(arr) {
