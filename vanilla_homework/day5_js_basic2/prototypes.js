@@ -139,6 +139,11 @@ export function myReduce(arr, cb, initial) {
   // Example: const arr = [1, 2, 3, 4, 5];
   // myReduce(arr, (acc, num) => acc + num, 0);
   // Expected output: 15
+  let accumulator = initial
+  for (const a of arr) {
+    accumulator = cb(accumulator, a)
+  }
+  return accumulator
 }
 
 export function mySort(arr, cb) {
