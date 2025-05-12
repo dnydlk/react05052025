@@ -42,6 +42,9 @@ export function myFind(arr, cb) {
   // Example: const arr = [1, 2, 3, 4, 5];
   // myFind(arr, num => num % 2 === 0);
   // Expected output: 2
+  for (const a of arr) {
+    if (cb(a)) return a
+  }
 }
 
 export function myEvery(arr, cb) {
