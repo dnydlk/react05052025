@@ -78,9 +78,9 @@ export function myIncludes(arr, val) {
   // myIncludes(arr, 3);
   // Expected output: true
   for (const a of arr) {
-    if (a === val) return true 
+    if (a === val) return true
   }
-  return false 
+  return false
 }
 
 export function myJoin(arr, separator) {
@@ -94,7 +94,7 @@ export function myJoin(arr, separator) {
     output += arr[i]
     output += separator
   }
-  return output += arr[arr.length - 1]
+  return (output += arr[arr.length - 1])
 }
 
 export function myPush(arr, val) {
@@ -113,6 +113,11 @@ export function myReverse1(arr) {
   // Example: const arr = [1, 2, 3, 4, 5];
   // myReverse(arr);
   // Expected output: [5, 4, 3, 2, 1]
+  const output = []
+  for (let i = arr.length - 1; i >= 0; i--) {
+    output.push(arr[i])
+  }
+  return output
 }
 
 export function myReverse2(arr) {
