@@ -65,6 +65,10 @@ export function mySome(arr, cb) {
   // Example: const arr = [1, 2, 3, 4, 5];
   // mySome(arr, num => num % 2 === 0);
   // Expected output: true
+  for (const a of arr) {
+    if (cb(a)) return true
+  }
+  return false
 }
 
 export function myIncludes(arr, val) {
