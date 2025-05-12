@@ -77,6 +77,10 @@ export function myIncludes(arr, val) {
   // Example: const arr = [1, 2, 3, 4, 5];
   // myIncludes(arr, 3);
   // Expected output: true
+  for (const a of arr) {
+    if (a === val) return true 
+  }
+  return false 
 }
 
 export function myJoin(arr, separator) {
