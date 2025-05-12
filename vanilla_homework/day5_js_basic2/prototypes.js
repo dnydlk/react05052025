@@ -53,6 +53,10 @@ export function myEvery(arr, cb) {
   // Example: const arr = [1, 2, 3, 4, 5];
   // myEvery(arr, num => num > 0);
   // Expected output: true
+  for (const a of arr) {
+    if (!cb(a)) return false
+  }
+  return true
 }
 
 export function mySome(arr, cb) {
