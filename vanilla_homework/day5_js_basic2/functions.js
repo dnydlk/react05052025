@@ -9,9 +9,15 @@ export function sum(a = 0, b = 0) {
   return a + b
 }
 
-export function sumOfAll() {
+export function sumOfAll(...nums) {
   // write a function that takes any number of arguments and returns their sum
   // if wrong data type is passed, throw an error
   // Define your function here
-  return () => {};
+  let total = 0
+  for (const n of nums) {
+    if (typeof n !== "number") {
+      throw new Error("Wrong data type")
+    } else total += n
+  }
+  return total
 }
