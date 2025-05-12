@@ -156,6 +156,18 @@ export function mySort(arr, cb) {
   // Example: const arr = [1, 2, 3, 4, 5];
   // mySort(arr, (a, b) => a - b);
   // Expected output: [1, 2, 3, 4, 5]
+  const outputArr = [...arr]
+  for (let i = 0; i < outputArr.length; i++) {
+    let haveSwapped = false
+    for (let j = 0; j < outputArr.length - i - 1; j++) {
+      if (cb(outputArr[j], outputArr[j + 1]) > 0) {
+        ;[outputArr[j], outputArr[j + 1]] = [outputArr[j + 1], outputArr[j]]
+        haveSwapped = true
+      }
+    }
+    if (!haveSwapped) break
+  }
+  return outputArr
 }
 
 export function mySlice(arr, start, end) {
