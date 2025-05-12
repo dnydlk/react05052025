@@ -6,6 +6,11 @@ export function myMap(arr, cb) {
   // Example: const arr = [1, 2, 3, 4, 5];
   // myMap(arr, num => num * 2);
   // Expected output: [2, 4, 6, 8, 10]
+  const outputArr = []
+  for (const a of arr) {
+    outputArr.push(cb(a))
+  }
+  return outputArr
 }
 
 export function myFilter(arr, cb) {
@@ -86,7 +91,7 @@ export function myReverse2(arr) {
 }
 
 // Challenges
-export  function myReduce(arr, cb, initial) {
+export function myReduce(arr, cb, initial) {
   // Write a function that takes an array, a callback and an initial value as arguments
   // and returns a single value.
   // Example: const arr = [1, 2, 3, 4, 5];
