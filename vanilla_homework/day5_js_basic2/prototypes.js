@@ -89,6 +89,12 @@ export function myJoin(arr, separator) {
   // Example: const arr = [1, 2, 3, 4, 5];
   // myJoin(arr, '-');
   // Expected output: '1-2-3-4-5'
+  let output = ""
+  for (let i = 0; i < arr.length - 1; i++) {
+    output += arr[i]
+    output += separator
+  }
+  return output += arr[arr.length - 1]
 }
 
 export function myPush(arr, val) {
