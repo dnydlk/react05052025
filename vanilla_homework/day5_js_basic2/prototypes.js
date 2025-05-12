@@ -113,9 +113,13 @@ export function myReverse1(arr) {
   // Example: const arr = [1, 2, 3, 4, 5];
   // myReverse(arr);
   // Expected output: [5, 4, 3, 2, 1]
-  const output = []
-  for (let i = arr.length - 1; i >= 0; i--) {
-    output.push(arr[i])
+  const output = [...arr]
+  let l = 0
+  let r = output.length - 1
+  while (l < r) {
+    ;[output[l], output[r]] = [output[r], output[l]]
+    l++
+    r--
   }
   return output
 }
