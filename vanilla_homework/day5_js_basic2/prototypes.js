@@ -176,4 +176,11 @@ export function mySlice(arr, start, end) {
   // Example: const arr = [1, 2, 3, 4, 5];
   // mySlice(arr, 1, 3);
   // Expected output: [2, 3]
+  if (start < 0) start += arr.length
+  if (end === undefined) end = arr.length
+  const output = []
+  for (let i = start; i < end; i++) {
+    output.push(arr[i])
+  }
+  return output
 }
