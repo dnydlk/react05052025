@@ -122,6 +122,14 @@ export function myReverse1(arr) {
 
 export function myReverse2(arr) {
   // Same as above but this time returns the original array reference reversed.
+  let l = 0
+  let r = arr.length - 1
+  while (l < r) {
+    ;[arr[l], arr[r]] = [arr[r], arr[l]]
+    l++
+    r--
+  }
+  return arr
 }
 
 // Challenges
