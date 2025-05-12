@@ -33,6 +33,7 @@ export function myConcat(arr1, arr2) {
   // const arr2 = [4, 5, 6];
   // myConcat(arr1, arr2);
   // Expected output: [1, 2, 3, 4, 5, 6]
+  return [...arr1, ...arr2]
 }
 
 export function myFind(arr, cb) {
