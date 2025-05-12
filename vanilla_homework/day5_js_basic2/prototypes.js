@@ -19,6 +19,11 @@ export function myFilter(arr, cb) {
   // Example: const arr = [1, 2, 3, 4, 5];
   // myFilter(arr, num => num % 2 === 0);
   // Expected output: [2, 4]
+  const outputArr = []
+  for (const a of arr) {
+    if (cb(a)) outputArr.push(a)
+  }
+  return outputArr
 }
 
 export function myConcat(arr1, arr2) {
