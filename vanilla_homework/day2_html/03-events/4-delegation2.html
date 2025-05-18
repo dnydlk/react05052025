@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delegation for nest Children</title>
+  </head>
+<body>
+  <h1>Delegation for nest Children</h1>
+  <ul>
+    <li>
+      <h2>Orange</h2>
+      <p>Kamal</p>
+    </li>
+    <li>
+      <h2>Apple</h2>
+      <p>Lawal</p>
+    </li>
+    <li>
+      <h2>Banana</h2>
+      <p>Olaide</p>
+    </li>
+  </ul>
+  <script>
+    const ul = document.querySelector("ul")
+
+    ul.addEventListener("click", function () {
+      event.target.style.backgroundColor = "gray"
+      // event.target.closest("li").style.backgroundColor = "gray"
+    })
+  </script>
+</body>
+</html>

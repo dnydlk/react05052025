@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delegation</title>
+  </head>
+  <body>
+    <h1>Delegation</h1>
+    <ul>
+      <li>Kamal</li>
+      <li>Lawal</li>
+      <li>Olaide</li>
+      <li>Ayinde</li>
+    </ul>
+    <script>
+      const ul = document.querySelector("ul")
+
+      ul.addEventListener("click", function () {
+        event.target.style.backgroundColor = "gray"
+      })
+    </script>
+  </body>
+</html>
