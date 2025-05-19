@@ -1,0 +1,101 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #667289;
+  color: #626d83;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  background-color: #f2f3f7;
+  padding: 20px;
+
+  &__form-title {
+    margin: 0 0 20px 0;
+    text-align: center;
+  }
+  &__form-subtitle {
+    margin: 0 0 20px 0;
+    text-align: center;
+  }
+  &__subcontainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .form-container__subcontainer:first-of-type .form-container__input {
+    flex: 1;
+    margin: 0 10px 12px;
+  }
+  &__input {
+    padding: 10px;
+    margin: 0 10px 12px 10px;
+    border: 1px solid #5c667a7a;
+  }
+  .form-container__input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(73, 83, 74, 0.3);
+  }
+  &__subcontainer:nth-of-type(2) {
+    margin: 0 10px 10px;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  &__checkbox {
+    margin-right: 8px;
+
+    &__text a {
+      text-decoration: none;
+      color: #55bd5a;
+    }
+    &__text a:visited {
+      color: #55bd5a;
+    }
+    &__text a:active {
+      color: #3f9542;
+    }
+  }
+  &__confirm {
+    margin: 20px 10px;
+    padding: 20px;
+    border: none;
+    border-radius: 0.5em;
+    background: linear-gradient(#55bd5a, #3f9542);
+    color: white;
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+  &__confirm:hover {
+    background: linear-gradient(#5ed264, #4bb34f);
+    cursor: pointer;
+  }
+  &__confirm:active {
+    background: linear-gradient(#55bd5a, #3f9542);
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

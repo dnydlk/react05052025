@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>register-form</title>
+  </head>
+  <body>
+    <form class="form-container">
+      <h1 class="form-container__form-title">Register</h1>
+      <p class="form-container__form-subtitle">
+        Create your account. It's free and only takes a minute
+      </p>
+      <div class="form-container__subcontainer">
+        <label for="firstName" class="sr-only">First Name</label>
+        <input
+          type="text"
+          id="firstName"
+          name="firstName"
+          class="form-container__input"
+          placeholder="First Name" />
+
+        <label for="lastName" class="sr-only">Last Name</label>
+        <input
+          type="text"
+          id="lastName"
+          name="lastName"
+          class="form-container__input"
+          placeholder="Last Name" />
+      </div>
+
+      <label for="email" class="sr-only">Email</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        class="form-container__input"
+        placeholder="Email" />
+      <label for="password" class="sr-only">Password</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        class="form-container__input"
+        placeholder="Password" />
+
+      <label for="confirmPassword" class="sr-only">Confirm Password</label>
+      <input
+        type="password"
+        id="confirmPassword"
+        name="confirmPassword"
+        class="form-container__input"
+        placeholder="Confirm Password" />
+      <div class="form-container__subcontainer">
+        <label for="checkbox" class="sr-only">Checkbox for terms and conditions</label>
+        <input
+          type="checkbox"
+          id="checkbox"
+          class="form-container__checkbox"
+          id="checkbox" />
+        <label class="form-container__checkbox__text" for="checkbox">
+          I accept the
+          <a href="#">Terms of Use</a>
+          &
+          <a href="#">Privacy Policy</a>
+        </label>
+      </div>
+      <button class="form-container__confirm" type="submit">Register Now</button>
+    </form>
+    <script src="script.js"></script>
+  </body>
+</html>

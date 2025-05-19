@@ -13,4 +13,14 @@ h1 {
   margin: 50px;
   border: 10px solid black;
   background-color: red;
+  /* box-sizing: content-box; */
+  box-sizing: border-box;
 }
+
+/* * content box */
+/* the width of the element only applies to the content */ 
+/* actual width of the element would be bigger due to padding and border */
+
+/* * border box */
+/* the width of the element = content + padding * 2 + border * 2 */
+/* more intuitive for programmers */
