@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>CSS Crash Corse</title>
+  </head>
+  <body>
+    <h1>CSS Crash Corse</h1>
+
+    <ul>
+      <li>Bread</li>
+      <li>Milk</li>
+      <li>Egg</li>
+    </ul>
+
+    <!-- * Cascade -->
+    <h2>Cascade</h2>
+
+    <!-- - Specifity -->
+    <!-- * order or Specifity: element selector < class selector < id selector < inline styles < !important -->
+    <h3 class="sub-heading" id="title" style="color: purple">Specifity</h3>
+    <!-- ! use !important only for overwriting third-party styles -->
+
+    <!-- - Inheritance -->
+    <!-- * text inherit style from parent -->
+    <div class="inheritance">
+      <p>Inheritance</p>
+    </div>
+
+    <!-- - Table -->
+    <table>
+      <thead>
+        <tr>
+          <th>Heading 1</th>
+          <th>Heading 2</th>
+          <th>Heading 3</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>data 1</td>
+          <td>data 2</td>
+          <td>data 3</td>
+        </tr>
+        <tr>
+          <td>data 4</td>
+          <td>data 5</td>
+          <td>data 6</td>
+        </tr>
+        <tr>
+          <td>data 7</td>
+          <td>data 8</td>
+          <td>data 9</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <br />
+    <br />
+    <br />
+
+    <!-- - Display type -->
+    <div class="content-1">div block Sample Content 1</div>
+    <span class="content-2">span inline Sample Content 2</span>
+
+    <br />
+    <br />
+    <br />
+
+    <!-- - Positions -->
+    <div class="position-1">Position 1</div>
+    <div class="container">
+      <div class="position-2">Position 2</div>
+    </div>
+
+    <br />
+    <br />
+    <br />
+
+    <!-- - CSS Units -->
+    <!-- * em -->
+    <div class="em-container">
+      Em Unit
+      <div class="em">Em child element</div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <!-- * rem -->
+    <div class="rem-container">
+      Em Unit
+      <!-- <div class="rem">Em child element</div> -->
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

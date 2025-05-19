@@ -1,0 +1,42 @@
+body {
+  color: red;
+}
+
+.title {
+  font-size: 6rem;
+}
+
+.subtitle {
+  font-size: 4rem;
+}
+
+@media screen {
+}
+@media speech {
+}
+@media print {
+}
+@media all and (max-width: 500px) {
+  body {
+    color: blue;
+  }
+}
+/* * no all and defualts to all and */
+@media (max-width: 500px) {
+  body {
+    color: blue;
+  }
+}
+
+/* or === , */
+@media (orientation: landscape), (max-width: 500px) {
+  .title {
+    color: green;
+  }
+}
+
+@media (orientation: portrait) {
+  .subtitle {
+    color: cyan;
+  }
+}
