@@ -1,0 +1,31 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.hr1 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100vw;
+}
+
+.hr2 {
+  margin: 2em 0;
+}
+
+.myFlexBox {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 0.75em;
+}
+
+.hide {
+  display: none;
+}
