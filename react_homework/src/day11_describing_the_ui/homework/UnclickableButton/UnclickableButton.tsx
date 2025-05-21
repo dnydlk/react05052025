@@ -12,7 +12,7 @@ export default function UnclickableButton() {
   }
   return (
     <>
-      <h2>Unclickable button</h2>
+      <h4>Unclickable button</h4>
       <button
         className="unclickable-button"
         disabled={isDisabled}

@@ -8,7 +8,7 @@ export default function ShowHideParagraph() {
   }
   return (
     <>
-      <h2>Show/Hide Paragraph</h2>
+      <h4>Show/Hide Paragraph</h4>
       <p>
         Create a component with a button and a paragraph of text. Clicking the button
         should toggle the visibility of the paragraph.
