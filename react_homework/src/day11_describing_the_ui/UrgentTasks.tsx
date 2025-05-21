@@ -1,7 +1,7 @@
 export interface TaskType {
-  id: number;
-  name: string;
-  priority: "normal" | "urgent";
+  id: number
+  name: string
+  priority: "normal" | "urgent"
 }
 
 // const exampleTasks: TaskType[] = [
@@ -16,8 +16,12 @@ export default function UrgentTasks({ tasks }: { tasks: TaskType[] }) {
   return (
     <div>
       <h1>Urgent Tasks</h1>
-      {/* Only displays the urgent tasks */}
+      {/* todo Only displays the urgent tasks */}
+      {tasks.map((task) => {
+        const { id, name, priority } = task
+        if (priority === "urgent") return <p key={id}>{name}</p>
+      })}
       <ul></ul>
     </div>
-  );
+  )
 }
