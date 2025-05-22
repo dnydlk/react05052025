@@ -23,7 +23,7 @@ export default function SateWithArray() {
 
   return (
     <div id="sate-with-array">
-      <h3>Sate With Array</h3>
+      <h4>Sate With Array</h4>
       <ol>
         {foods.map((food, index) => {
           // ? () => handleRemoveFood(index) why not handleRemoveFood(index)

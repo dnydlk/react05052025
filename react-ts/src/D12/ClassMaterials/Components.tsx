@@ -1,14 +1,14 @@
 export default function Components() {
   return (
     <div className="components">
-      <h2>Components</h2>
+      <h3>Components</h3>
       <a href="https://youtu.be/f55qeKGgB_M?si=GmEStYwvXNCL-FF-&t=1094" target="_blank">
         React Course For Beginners - Learn React in 8 Hours
       </a>
       <div className="myFlexBox">
-        <h3>JSX & Curly Braces</h3>
-        <h3>Props</h3>
-        <h3>Children Prop</h3>
+        <h4>JSX & Curly Braces</h4>
+        <h4>Props</h4>
+        <h4>Children Prop</h4>
       </div>
 
       <User name="Daniyal" age={27} email="Daniyal@email.com" />

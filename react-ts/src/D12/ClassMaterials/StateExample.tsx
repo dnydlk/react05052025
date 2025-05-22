@@ -6,7 +6,7 @@ export default function StateExample() {
 
   return (
     <div id="state-example">
-      <h3>State Example</h3>
+      <h4>State Example</h4>
       <div className="myFlexBox">
         <button
           onClick={() => {

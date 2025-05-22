@@ -6,13 +6,13 @@ class Welcome extends Component {
   render() {
     return (
       <div className="welcome">
-        <h2>Class Component</h2>
+        <h3>Class Component</h3>
         <a href="https://youtu.be/lnV34uLEzis?si=wwNfH9pZ2d9_I9ZH" target="_blank">
           ReactJS Tutorial - 6 - Class Components
         </a>
-        <h3>Functional Component Car</h3>
+        <h4>Functional Component Car</h4>
         <Car />
-        <h3>Class Component Car</h3>
+        <h4>Class Component Car</h4>
         <CarClassComponent color="blue" />
       </div>
     )

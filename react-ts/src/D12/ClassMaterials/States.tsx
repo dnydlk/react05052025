@@ -17,7 +17,7 @@ export default function States() {
 
   return (
     <div id="states">
-      <h2>States</h2>
+      <h3>States</h3>
       <div className="myFlexBox">
         <h1>{age}</h1>
       </div>

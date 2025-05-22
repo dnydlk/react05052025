@@ -5,8 +5,9 @@ export default function StateExercise() {
 
   return (
     <div id="state-exercise">
+      <h4>State Exercise</h4>
       <div className="myFlexBox">
-        <h3>{count}</h3>
+        <p>{count}</p>
       </div>
       <div className="myFlexBox">
         <button
