@@ -5,7 +5,7 @@ const cars = [
   { id: 4, year: 2023, name: "Honda", model: "model3" },
 ]
 
-export default function InClass() {
+export default function LiveLectureTueMay19() {
   return (
     <div className="in-class">
       <h2>In Class</h2>
