@@ -5,17 +5,9 @@ import States from "./States"
 import Welcome from "./ClassComponents"
 
 export default function ClassMaterials() {
-  // const components = [Components, Rendering, Lists, States, Welcome]
   return (
     <div className="class-materials">
       <h2>Class Materials</h2>
-      {/* {components.map((Component, index) => {
-        return (
-          <div key={index}>
-            <Component /> <hr className="hr2" />
-          </div>
-        )
-      })} */}
       <Components />
       <hr className="hr2" />
       <Rendering />
