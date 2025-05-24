@@ -5,7 +5,7 @@ export default function LiveLectureThuMay21() {
 
   return (
     <div className="in-class-thu-may-22">
-      <h2>In Class Thu May 22</h2>
+      <h2>Live Lecture Thu May 21</h2>
       <h3>People under 30</h3>
       {/* {under30.map(({ id, firstName, lastName, age, gender, hair: { color } }) => { */}
       {userUnder30.map((user) => {

@@ -1,8 +1,9 @@
 import "./App.css"
-import D12 from "./D12"
+import LiveLectureTueMay19 from "./D11 React UI/LiveLectureTueMay19"
+import LiveLectureThuMay21 from "./D11 React UI/LiveLectureThuMay21"
 
 function App() {
-  const components = [D12]
+  const components = [LiveLectureTueMay19, LiveLectureThuMay21]
   return (
     <div className="app">
       {components.map((Component, index) => {

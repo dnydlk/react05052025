@@ -8,12 +8,11 @@ const cars = [
 export default function LiveLectureTueMay19() {
   return (
     <div className="in-class">
-      <h2>In Class</h2>
-      <p>D12 Tue May 21</p>
+      <h2>Live Lecture Thu May 19</h2>
       {/* outer {} is for JSX, inner {} is the object  */}
-      {cars.map((car) => {
+      {cars.map(({ id, name, year, model }) => {
         // ! best practice is to destruct the iterated obeject
-        const { id, name, year, model } = car
+        // const { id, name, year, model } = car
         return <Car key={id} name={name} year={year} model={model} />
         // ! passing the object directly to <Car />
         // !  Make sure the Child can receive all
