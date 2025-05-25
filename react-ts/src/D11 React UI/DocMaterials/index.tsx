@@ -4,9 +4,9 @@ import Rendering from "./Rendering"
 import States from "./States"
 import Welcome from "./ClassComponents"
 
-export default function ClassMaterials() {
+export default function DocMaterials() {
   return (
-    <div className="class-materials">
+    <div className="doc-materials">
       <h2>Class Materials</h2>
       <Components />
       <hr className="hr2" />

@@ -7,7 +7,7 @@ const cars = [
 
 export default function LiveLectureTueMay19() {
   return (
-    <div className="in-class">
+    <div className="live-lecture-tue-may-19">
       <h2>Live Lecture Thu May 19</h2>
       {/* outer {} is for JSX, inner {} is the object  */}
       {cars.map(({ id, name, year, model }) => {

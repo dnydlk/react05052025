@@ -1,18 +1,19 @@
+import { Fragment } from "react/jsx-runtime"
 import "./App.css"
-import LiveLectureTueMay19 from "./D11 React UI/LiveLectureTueMay19"
-import LiveLectureThuMay21 from "./D11 React UI/LiveLectureThuMay21"
+import D11 from "./D11 React UI"
+import LearnReact from "./LearnReact"
 
 function App() {
-  const components = [LiveLectureTueMay19, LiveLectureThuMay21]
+  const components = [D11, LearnReact]
   return (
     <div className="app">
       {components.map((Component, index) => {
         return (
           // <div key={index} className="hide">
-          <div key={index}>
+          <Fragment key={index}>
             <Component />
             <hr className="hr1" />
-          </div>
+          </Fragment>
         )
       })}
       <br />

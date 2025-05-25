@@ -4,7 +4,7 @@ export default function LiveLectureThuMay21() {
   const userUnder30 = usersJson.users.filter((u) => u.age <= 30)
 
   return (
-    <div className="in-class-thu-may-22">
+    <div className="live-lecture-tue-may-21">
       <h2>Live Lecture Thu May 21</h2>
       <h3>People under 30</h3>
       {/* {under30.map(({ id, firstName, lastName, age, gender, hair: { color } }) => { */}
