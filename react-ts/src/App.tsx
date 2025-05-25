@@ -3,23 +3,37 @@ import "./App.css"
 import D11 from "./D11 React UI"
 import LearnReact from "./LearnReact"
 
+/**
+ * Get the display content for the components
+ * @param components to display
+ * @returns components with <hr> between them and <br> at the end
+ */
+const getDisplayContent = (components: React.ComponentType[]) => {
+  const displayContent = []
+  for (let i = 0; i < components.length - 1; i++) {
+    const Comp = components[i]
+    displayContent.push(
+      <Fragment key={`${i} component`}>
+        <Comp />
+        <hr className="hr1" />
+      </Fragment>
+    )
+  }
+  const Last = components[components.length - 1]
+  displayContent.push(<Last key={`${components.length - 1} component`} />)
+
+  for (let i = 0; i < 12; i++) {
+    displayContent.push(<br key={`${i} br`} />)
+  }
+
+  return displayContent
+}
+
 function App() {
   const components = [D11, LearnReact]
-  return (
-    <div className="app">
-      {components.map((Component, index) => {
-        return (
-          // <div key={index} className="hide">
-          <Fragment key={index}>
-            <Component />
-            <hr className="hr1" />
-          </Fragment>
-        )
-      })}
-      <br />
-      <br />
-    </div>
-  )
+  const displayContent = getDisplayContent(components)
+
+  return <div className="app">{displayContent}</div>
 }
 
 export default App
