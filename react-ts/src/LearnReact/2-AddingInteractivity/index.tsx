@@ -1,6 +1,7 @@
 import RespondingToEvents from "./1-RespondingToEvents"
 import StateAComponentsMemory from "./2-StateAComponentsMemory"
 import QueueingASeriesOfStateUpdates from "./3-QueueingASeriesOfStateUpdates"
+import UpdateingObjectsInState from "./4-UpdateingObjectsInState"
 
 export default function AddingInteractivity() {
   return (
@@ -9,6 +10,7 @@ export default function AddingInteractivity() {
       <RespondingToEvents />
       <StateAComponentsMemory />
       <QueueingASeriesOfStateUpdates />
+      <UpdateingObjectsInState />
     </div>
   )
 }
