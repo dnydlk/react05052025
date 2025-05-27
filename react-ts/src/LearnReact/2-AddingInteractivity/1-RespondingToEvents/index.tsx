@@ -5,11 +5,11 @@ import NamingEventHandlersProps from "./4-NamingEventHandlersProps"
 import EventPropagation from "./5-EventPropagation"
 import StopEventPropagation from "./6-StopEventPropagation"
 import PreventingDefaultBehavior from "./7-PreventingDefaultBehavior"
-import Challenge1 from "./8-challenge-1"
+import Challenge1 from "./8-Challenge-1"
 
 export default function RespondingToEvents() {
   return (
-    <div className="responding-to-events">
+    <div className="1-responding-to-events">
       <h3>Responding to Events</h3>
       <AddingEventHandlers />
       <ReadingPropsInEventHandlers />
