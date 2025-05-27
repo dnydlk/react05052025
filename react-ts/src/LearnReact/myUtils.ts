@@ -14,7 +14,7 @@ const giveMeNames = (str: string) => {
   return res
 }
 
-const myStrs = giveMeNames("Updating a nested object")
+const myStrs = giveMeNames("Updating objects inside arrays")
 for (const each of myStrs) {
   console.log(each)
 }
