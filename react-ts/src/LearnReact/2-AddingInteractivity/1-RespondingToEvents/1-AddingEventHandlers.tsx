@@ -2,12 +2,12 @@ export default function AddingEventHandlers() {
   return (
     <div className="adding-event-handlers">
       <h4>Adding Event Handlers</h4>
-      <Button />
+      <MyButton />
     </div>
   )
 }
 
-const Button = () => {
+const MyButton = () => {
   const handleClick = () => alert("You Clicked me!")
 
   // return <button onClick={handleClick}>I Don't Do Anything</button>
