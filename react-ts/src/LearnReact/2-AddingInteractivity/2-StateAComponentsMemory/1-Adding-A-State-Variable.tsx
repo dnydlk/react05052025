@@ -13,12 +13,13 @@ const Gallery = () => {
   const [index, setIndex] = useState(0)
   const [isDescOn, setIsDescOn] = useState(false)
 
-  const navigateSculptureIndex = (direction: number) =>
+  const navigateSculptureIndex = (direction: number) => {
     setIndex((prevIndex) =>
       direction === 0
         ? 0
         : (prevIndex + direction + sculptureList.length) % sculptureList.length
     )
+  }
 
   let sculpture = sculptureList[index]
 
