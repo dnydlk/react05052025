@@ -1,4 +1,5 @@
 import TodoList from "./TodoList"
+import ControlledComponents from "./ControlledComponents"
 
 export default function Homework() {
   return (
@@ -6,6 +7,7 @@ export default function Homework() {
       <h2>Day 12 Homework</h2>
       <h3>From Google Doc</h3>
       <TodoList />
+      <ControlledComponents />
     </div>
   )
 }
