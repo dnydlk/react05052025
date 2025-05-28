@@ -19,3 +19,11 @@
   margin: 0 auto;
   padding: 0 0 20px 0;
 }
+
+.myFlexBox {
+  display: flex;
+  /*- justify-content: center; */
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.75em;
+}

@@ -59,7 +59,7 @@ export default function FunctionalComponents() {
 
   return (
     <div className="functional-components">
-      <h3>Functional Components TodoList</h3>
+      <h4>Functional Components TodoList</h4>
       <div className="myFlexBox" style={{ alignItems: "stretch" }}>
         <input
           type="text"

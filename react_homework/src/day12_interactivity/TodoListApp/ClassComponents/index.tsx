@@ -17,7 +17,7 @@ interface ListItemProps {
   handleEdit: (id: string, newTitle: string) => void
 }
 
-class classComponents extends Component<{}, State> {
+class ClassComponents extends Component<{}, State> {
   state: State = {
     todos: [
       { id: "0", title: "task1" },
@@ -67,7 +67,7 @@ class classComponents extends Component<{}, State> {
 
     return (
       <div className="functional-components">
-        <h3>Class Components TodoList</h3>
+        <h4>Class Components TodoList</h4>
         <div className="myFlexBox" style={{ alignItems: "stretch" }}>
           <input
             type="text"
@@ -167,4 +167,4 @@ class ListItem extends Component<
   }
 }
 
-export default classComponents
+export default ClassComponents

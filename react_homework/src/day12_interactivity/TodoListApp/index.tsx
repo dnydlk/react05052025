@@ -1,4 +1,11 @@
+import ClassComponents from "./ClassComponents"
+import FunctionalComponents from "./FunctionalComponents"
+
 export default function TodoListApp() {
-  // write your todo list app here
-  return <div>TodoListApp</div>;
+  return (
+    <div className="d12-todo-list">
+      <FunctionalComponents />
+      <ClassComponents />
+    </div>
+  )
 }

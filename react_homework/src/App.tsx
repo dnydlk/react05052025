@@ -1,10 +1,11 @@
 import "./App.css"
-import Day11Notes from "./day11_describing_the_ui/notes"
+import D12 from "./day12_interactivity"
 
 function App() {
   return (
     <div id="app">
-      <Day11Notes />
+      <h1>React</h1>
+      <D12 />
     </div>
   )
 }
