@@ -8,10 +8,10 @@ export default function AddingInteractivity() {
   return (
     <div className="adding-interactivity">
       <h2>Adding Interactivity</h2>
-      <RespondingToEvents />
-      <StateAComponentsMemory />
-      <QueueingASeriesOfStateUpdates />
-      <UpdateingObjectsInState />
+      {/* <RespondingToEvents /> */}
+      {/* <StateAComponentsMemory /> */}
+      {/* <QueueingASeriesOfStateUpdates /> */}
+      {/* <UpdateingObjectsInState /> */}
       <UpdatingArraysInState />
     </div>
   )

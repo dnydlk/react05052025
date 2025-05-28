@@ -6,9 +6,9 @@ export default function LearnReact() {
   return (
     <div className="learn-react">
       <h2>Leanrn React</h2>
-      <QuickStart />
+      {/* <QuickStart /> */}
       <hr className="hr2" />
-      <DescribingTheUI />
+      {/* <DescribingTheUI /> */}
       <hr className="hr2" />
       <AddingInteractivity />
     </div>
