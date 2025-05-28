@@ -6,7 +6,7 @@ import Welcome from "./ClassComponents"
 
 export default function DocMaterials() {
   return (
-    <div className="doc-materials">
+    <div className="d11-doc-materials">
       <h2>Class Materials</h2>
       <Components />
       <hr className="hr2" />
