@@ -49,8 +49,8 @@ export default function FunctionalComponents() {
     setTodos((prevTodos) => prevTodos.filter((t) => t.id !== todoId))
 
   const handleEdit: TodoEditHandler = (todoId, newTitle) => {
-    setTodos(
-      todos.map((t) => {
+    setTodos((prevTodos) =>
+      prevTodos.map((t) => {
         if (t.id === todoId) return { ...t, title: newTitle }
         else return t
       })
