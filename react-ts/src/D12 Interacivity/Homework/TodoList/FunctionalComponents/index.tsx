@@ -6,14 +6,14 @@ interface TodoItem {
   title: string
 }
 
-type HandleAdd = () => void
-type HandleDelete = (todoId: string) => void
-type HandleEdit = (todoId: string, e: React.ChangeEvent<HTMLInputElement>) => void
+type TodoAddHandler = () => void
+type TodoDeleteHandler = (todoId: string) => void
+type TodoEditHandler = (todoId: string, newTitle: string) => void
 
 interface ListItemProps {
   todo: TodoItem
-  handleDelete: HandleDelete
-  handleEdit: HandleEdit
+  handleDelete: TodoDeleteHandler
+  handleEdit: TodoEditHandler
 }
 
 const initialList: TodoItem[] = [
@@ -35,23 +35,23 @@ export default function FunctionalComponents() {
   const [todos, setTodos] = useState(initialList)
   const [inputValue, setInputValue] = useState("")
 
-  const handleAdd: HandleAdd = () => {
+  const handleAdd: TodoAddHandler = () => {
     if (inputValue.trim().length === 0) return
     const newTodo: TodoItem = {
       id: uuidv4(),
-      title: inputValue,
+      title: inputValue.trim(),
     }
     setTodos((prevTodos) => [...prevTodos, newTodo])
     setInputValue("")
   }
 
-  const handleDelete: HandleDelete = (todoId) =>
-    setTodos(todos.filter((t) => t.id !== todoId))
+  const handleDelete: TodoDeleteHandler = (todoId) =>
+    setTodos((prevTodos) => prevTodos.filter((t) => t.id !== todoId))
 
-  const handleEdit: HandleEdit = (todoId, e) => {
+  const handleEdit: TodoEditHandler = (todoId, newTitle) => {
     setTodos(
       todos.map((t) => {
-        if (t.id === todoId) return { ...t, title: e.target.value }
+        if (t.id === todoId) return { ...t, title: newTitle }
         else return t
       })
     )
@@ -89,24 +89,58 @@ export default function FunctionalComponents() {
 
 function ListItem({ todo: { id, title }, handleDelete, handleEdit }: ListItemProps) {
   const [isEditing, setIsEditing] = useState(false)
+  const [editValue, setEditValue] = useState(title)
+
+  const handleSave = () => {
+    if (editValue.trim().length > 0) {
+      handleEdit(id, editValue)
+      setIsEditing(false)
+    }
+  }
+
+  const handleCancel = () => {
+    setEditValue(title) // Reset to original value
+    setIsEditing(false)
+  }
 
   return (
-    <div className="myFlexBox" style={{ width: "440px" }}>
-      {!isEditing && <p style={{ marginRight: "auto" }}>{title}</p>}
-      {isEditing && (
+    <div
+      className="myFlexBox"
+      style={{
+        width: "440px",
+        alignItems: "stretch",
+        marginTop: "10px",
+        padding: "5px",
+      }}>
+      {isEditing ? (
         <input
-          name="title"
           type="text"
+          value={editValue}
           style={{ marginRight: "auto" }}
-          value={title}
-          onChange={(e) => handleEdit(id, e)}
+          onChange={(e) => setEditValue(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") handleSave()
+            if (e.key === "Escape") handleCancel()
+          }}
+          autoFocus
         />
+      ) : (
+        <p style={{ marginRight: "auto" }}>{title}</p>
       )}
 
-      <button onClick={() => handleDelete(id)}>delete</button>
-      <button onClick={() => setIsEditing(!isEditing)}>
-        {isEditing ? "save" : "edit"}
-      </button>
+      {!isEditing ? (
+        <button onClick={() => setIsEditing(true)}>Edit</button>
+      ) : (
+        <>
+          <button onClick={handleSave}>Save</button>
+          <button onClick={handleCancel}>Cancel</button>
+        </>
+      )}
+      {!isEditing && (
+        <button style={{ backgroundColor: "#ff0000b0" }} onClick={() => handleDelete(id)}>
+          delete
+        </button>
+      )}
     </div>
   )
 }
