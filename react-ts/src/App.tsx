@@ -1,6 +1,7 @@
 import { Fragment } from "react/jsx-runtime"
 import "./App.css"
 import D11 from "./D11 React UI"
+import D12 from "./D12 Interacivity"
 import LearnReact from "./LearnReact"
 
 /**
@@ -30,7 +31,7 @@ const getDisplayContent = (components: React.ComponentType[]) => {
 }
 
 function App() {
-  const components = [D11, LearnReact]
+  const components = [D11, D12, LearnReact]
   const displayContent = getDisplayContent(components)
 
   return <div className="app">{displayContent}</div>
