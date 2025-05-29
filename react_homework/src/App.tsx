@@ -1,11 +1,11 @@
 import "./App.css"
-import D12 from "./day12_interactivity"
+import D16 from "./day16_patterns"
 
 function App() {
   return (
     <div id="app">
       <h1>React</h1>
-      <D12 />
+      <D16 />
     </div>
   )
 }
