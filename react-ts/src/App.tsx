@@ -3,7 +3,7 @@ import "./App.css"
 import D11 from "./D11 React UI"
 import D12 from "./D12 Interacivity"
 import LearnReact from "./LearnReact"
-import D13 from "./D13"
+import D13 from "./D13 Lifecycles and useEffect"
 
 /**
  * Get the display content for the components

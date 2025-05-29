@@ -1,20 +1,44 @@
 const giveMeNames = (str: string) => {
   const res = []
-  const capitalized = []
+  const noSpaceCapitalized = []
   const dashed = []
+  const spacedCapitalized = []
+  const minorWords = new Set([
+    "a",
+    "an",
+    "the",
+    "and",
+    "but",
+    "or",
+    "for",
+    "nor",
+    "on",
+    "at",
+    "to",
+    "from",
+    "by",
+    "in",
+    "of",
+  ])
+
   const strs = str.split(" ")
-  console.log(strs)
-  for (let s of strs) {
-    capitalized.push(s.charAt(0).toUpperCase() + s.slice(1))
-    dashed.push("-" + s.toLowerCase())
+  for (let i = 0; i < strs.length; i++) {
+    const word = strs[i].toLowerCase()
+    noSpaceCapitalized.push(word.charAt(0).toUpperCase() + word.slice(1))
+    dashed.push("-" + word)
+    if (i === 0 || !minorWords.has(word)) {
+      spacedCapitalized.push(word.charAt(0).toUpperCase() + word.slice(1))
+    } else {
+      spacedCapitalized.push(word)
+    }
   }
-  res.push(capitalized.join(""))
+  res.push(noSpaceCapitalized.join(""))
   res.push(dashed.join(""))
-  res.push(str)
+  res.push(spacedCapitalized.join(" "))
   return res
 }
 
-const myStrs = giveMeNames("Updating objects inside arrays")
+const myStrs = giveMeNames("How to get the icon from an application from mac")
 for (const each of myStrs) {
   console.log(each)
 }
