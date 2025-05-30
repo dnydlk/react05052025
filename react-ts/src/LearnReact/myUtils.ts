@@ -38,7 +38,7 @@ const giveMeNames = (str: string) => {
   return res
 }
 
-const myStrs = giveMeNames("How to get the icon from an application from mac")
+const myStrs = giveMeNames("How to italicize comments in VS Code")
 for (const each of myStrs) {
   console.log(each)
 }

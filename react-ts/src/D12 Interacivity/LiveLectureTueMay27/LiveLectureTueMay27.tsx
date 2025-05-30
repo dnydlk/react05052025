@@ -23,35 +23,20 @@ export default function LiveLectureTueMay27() {
   }
 
   useEffect(() => {
-    // console.log("useEffect triggered for ID:", id)
-    setIsLoading(true)
-    sleep(500)
     const fetchRecipe = async () => {
+      setIsLoading(true)
+      sleep(500)
       try {
         await fetchRecipeById(id)
       } catch (error) {
         console.log(error)
+        setRecipe(null)
       } finally {
         setIsLoading(false)
       }
     }
     fetchRecipe()
   }, [id])
-
-  // useEffect(() => {
-  //   ;async () => {
-  //     try {
-  //       setIsLoading(false)
-  //       await sleep(500)
-  //       const data = await fetchRecipeById(id)
-  //       setRecipe(data)
-  //     } catch (error) {
-  //       console.log(error)
-  //     } finally {
-  //       setIsLoading(true)
-  //     }
-  //   }
-  // }, [id])
 
   if (isLoading) return <h4>Loading...</h4>
   if (!recipe) return <h4>No recipe found.</h4>
