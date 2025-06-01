@@ -5,6 +5,7 @@ import D12 from "./D12 Interacivity"
 import LearnReact from "./LearnReact"
 import D13 from "./D13 Lifecycles and useEffect"
 import D16 from "./D16 Patterns"
+import D18 from "./D18 Context and useReducer"
 
 /**
  * Get the display content for the components
@@ -33,8 +34,8 @@ const getDisplayContent = (components: React.ComponentType[]) => {
 }
 
 function App() {
-  // const components = [D11, D12, D13, D16, LearnReact]
-  const components = [D13]
+  // const components = [D11, D12, D13, D16, D18, LearnReact]
+  const components = [D18]
   const displayContent = getDisplayContent(components)
 
   return <div className="app">{displayContent}</div>
