@@ -35,7 +35,7 @@ const getDisplayContent = (components: React.ComponentType[]) => {
 
 function App() {
   // const components = [D11, D12, D13, D16, D18, LearnReact]
-  const components = [D18]
+  const components = [D16]
   const displayContent = getDisplayContent(components)
 
   return <div className="app">{displayContent}</div>

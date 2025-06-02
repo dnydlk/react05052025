@@ -160,26 +160,3 @@ const ligatures = [
   "ull",
   "ll",
 ]
-
-// fixme))
-const features = ["@ $ & % Q => ->"]
-const chinese = ["测试汉字"]
-
-const test = ["0", "o", "1", "l", "#$%^&*()[]{}:;'<><Test />", "return "]
-
-/**
- * Maple Mono, smooth your coding flow
-
-abcdefghijklmnopqrstuvwxyz
-ABCDEFGHIJKLMNOPQRSTUVWXYZ
-
-~!?@#$%^&* {} [] () I1l O0o
-
-!== \\ <= #{ -> ~@ |> 0x12 <=
-
-[INFO] todo)) fixme))
-
-Input your text here.
-
-中文测试：“‘’” …… —— ，。 “”“”····------——
- */
