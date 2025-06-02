@@ -3,7 +3,7 @@ import HOCFunctionalComponent from "./HOCFunctionalComponent"
 
 export default function HigherOrderComponents() {
   return (
-    <div className="higher-order-components">
+    <div className="d16-higher-order-components">
       {/* <App /> */}
       <HOCFunctionalComponent />
     </div>
