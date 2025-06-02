@@ -11,6 +11,10 @@ export function withCounter<P extends InjectedProps>(
   incrementNumber: number
 ) {
   // ![note] omit the reaminging props
+  /**
+   * Omit<P, keyof InjectedProps> ensures that when you use <EnhancedClickCounter name="Dani" />,
+   * TypeScript knows count and incrementCount will be provided by the HOC, not by the parent.
+   */
   type RemainingProps = Omit<P, keyof InjectedProps>
 
   const WithCounter = (props: RemainingProps) => {
