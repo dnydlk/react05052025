@@ -1,0 +1,72 @@
+:root {
+  --btn-font-color: #fcfcfc;
+  --label-color: #504f4f;
+}
+
+.fitness-goal-tracker {
+  border: 1px solid black;
+  padding: 15px;
+  width: 500px;
+}
+
+.fitness-goal-tracker h2 {
+  text-align: center;
+}
+
+.fitness-goal-tracker > div {
+  /* border: 1px solid red; */
+  margin-bottom: 10px;
+}
+
+.fitness-goal-tracker label {
+  color: var(--label-color);
+  font-size: 0.85em;
+}
+
+.fitness-goal-tracker input,
+.fitness-goal-tracker select,
+.fitness-goal-tracker .add-btn {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  height: 29px;
+}
+
+.fitness-goal-tracker input {
+  padding: 4px;
+}
+
+.fitness-goal-tracker .add-btn {
+  padding: 7px 0px 25px;
+  background-color: #4d9b48;
+  color: var(--btn-font-color);
+  font-size: 0.9em;
+}
+
+.fitness-goal-tracker .task {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid var(--label-color);
+  border-radius: 8px;
+  font-size: 0.9em;
+}
+
+.fitness-goal-tracker .mark-btn {
+  display: inline-block;
+}
+
+.achieved-btn {
+  background-color: #2f6df6;
+  color: var(--btn-font-color);
+}
+
+.delete-btn {
+  background-color: #e33e3e;
+  color: var(--btn-font-color);
+}
+
+.task p {
+  margin-left: 8px;
+}

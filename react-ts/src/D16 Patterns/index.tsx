@@ -1,7 +1,10 @@
 import DocMaterials from "./DocMaterials"
+import Homework from "./Homework"
 
 export default function D16() {
-  const components = [DocMaterials]
+  // const components = [DocMaterials, Homework]
+  // - [note]: temporarily only displayed Homework
+  const components = [Homework]
   return (
     <div className="day16-patterns">
       <h1>D16 Patterns</h1>

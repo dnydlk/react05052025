@@ -34,4 +34,17 @@ const getDisplayContent = (components: React.ComponentType[], hr: string) => {
   return displayContent
 }
 
-export { getDisplayContent }
+const deepClone = (obj: any) => {
+  if (typeof obj !== "object" || obj === null) return obj
+
+  const newObj: any = Array.isArray(obj) ? [] : {}
+
+  for (const key in obj) {
+    const value = obj[key]
+    newObj[key] = deepClone(value)
+  }
+
+  return newObj
+}
+
+export { getDisplayContent, deepClone }
