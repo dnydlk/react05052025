@@ -10,8 +10,8 @@ import { getDisplayContent } from "./utils/utility functions"
 
 function App() {
   // const components = [D11, D12, D13, D16, D18, LearnReact]
-  // - [note]: temporarily only displayed D16
-  const components = [D16]
+  // - [note]: temporarily only displayed D18
+  const components = [D18]
   const displayContent = getDisplayContent(components, "hr1")
 
   return <div className="app">{displayContent}</div>

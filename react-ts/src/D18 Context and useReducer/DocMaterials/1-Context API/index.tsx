@@ -22,14 +22,12 @@ const Parent = () => {
   // * Create a context provider
   return (
     <AppContext.Provider value={{ userName, setUserName }}>
-      <div>
-        <h3>Parent</h3>
-        {userName}
-        {/* <Child setUserName={setUserName} /> */}
-        {/* <Child /> */}
-        <Child1 />
-        <Child2 />
-      </div>
+      <h3>Parent</h3>
+      {userName}
+      {/* <Child setUserName={setUserName} /> */}
+      {/* <Child /> */}
+      <Child1 />
+      <Child2 />
     </AppContext.Provider>
   )
 }
