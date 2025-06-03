@@ -24,8 +24,8 @@ export default class ComponentDidMount extends Component<{}, ComponentDidMountSt
     // * Update state
     console.warn("reder() called")
     return (
-      <div>
-        <h2>Life Cycle Method: ComponentDidMount</h2>
+      <div className="component-did-mount">
+        <h4>Life Cycle Method: ComponentDidMount</h4>
       </div>
     )
   }

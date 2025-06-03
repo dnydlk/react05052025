@@ -21,6 +21,7 @@ export default function App() {
 
   return (
     <>
+      <h4>useRed Example 1</h4>
       <input
         ref={inputRef}
         type="text"

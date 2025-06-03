@@ -1,4 +1,4 @@
-import { usersJson } from "./data"
+import { usersJson } from "../data"
 
 export default function LiveLectureThuMay21() {
   const userUnder30 = usersJson.users.filter((u) => u.age <= 30)

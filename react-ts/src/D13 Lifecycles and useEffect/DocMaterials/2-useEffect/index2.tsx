@@ -3,7 +3,7 @@ import { useState, useEffect } from "react"
 export default function UseEffect2() {
   return (
     <div className="useEffect-2">
-      <h2>useEffect-2</h2>
+      <h3>useEffect-2</h3>
       <a href="https://youtu.be/0ZJgIjIuY7U?si=YnfLPrYPaGFAUyKE">
         Learn useEffect In 13 Minutes
       </a>

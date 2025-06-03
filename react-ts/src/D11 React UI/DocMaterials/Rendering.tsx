@@ -2,7 +2,7 @@ export default function Rendering() {
   const age = 18
   const isGreen = true
   return (
-    <div id="rendering">
+    <div className="rendering">
       <h3>Rendering</h3>
       <div className="myFlexBox">
         <h4>Age: {age}</h4>

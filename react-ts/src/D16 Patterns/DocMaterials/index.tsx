@@ -1,10 +1,10 @@
 import { getDisplayContent } from "../../utils/utility functions"
-import LifecycleMethods from "./1-Lifecycle Methods"
-import UseEffect from "./2-useEffect"
-import UseEffect2 from "./2-useEffect/index2"
+import HigherOrderComponents from "./01-Higher Order Components"
+import UseRef from "./02-useRef"
+import CustomHooks from "./03-Custom Hook"
 
 export default function DocMaterials() {
-  const components = [LifecycleMethods, UseEffect, UseEffect2]
+  const components = [HigherOrderComponents, UseRef, CustomHooks]
   const displayContent = getDisplayContent(components, "hr2")
   return (
     <div className="doc-materials">

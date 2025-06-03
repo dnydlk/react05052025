@@ -3,7 +3,7 @@ import UnclickableButton from "./UnclickableButton/UnclickableButton"
 
 export default function Homework() {
   return (
-    <div id="day-11-homework">
+    <div className="homework">
       <h2>Day 11 Homework</h2>
 
       <h3>From Google Doc</h3>

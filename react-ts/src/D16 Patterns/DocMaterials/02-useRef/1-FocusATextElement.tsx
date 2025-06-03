@@ -9,6 +9,7 @@ export default function FocusATextElement() {
   }
   return (
     <>
+      <h4>useRed Example 2 Focus a Text Input</h4>
       <input ref={inputRef} />
       <button onClick={focusInput}>Focus Input</button>
     </>

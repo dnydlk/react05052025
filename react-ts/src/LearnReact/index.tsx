@@ -5,10 +5,10 @@ import AddingInteractivity from "./2-AddingInteractivity"
 export default function LearnReact() {
   return (
     <div className="learn-react">
-      <h2>Leanrn React</h2>
-      {/* <QuickStart /> */}
+      <h1>Leanrn React</h1>
+      <QuickStart />
       <hr className="hr2" />
-      {/* <DescribingTheUI /> */}
+      <DescribingTheUI />
       <hr className="hr2" />
       <AddingInteractivity />
     </div>

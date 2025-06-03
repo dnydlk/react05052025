@@ -23,8 +23,8 @@ export default class LifeCycleMethod extends Component<{}, LifeCycleMethodState>
     // * Update state
     console.warn("reder() called")
     return (
-      <div>
-        <h2>Life Cycle Method</h2>
+      <div className="life-cycle-method">
+        <h4>Life Cycle Method</h4>
         <button onClick={() => this.setState({ show: !this.state.show })}>
           Toggle NavBar
         </button>

@@ -79,7 +79,8 @@ export default function LiveLectureWedMay28() {
   }
 
   return (
-    <div className="LiveLectureTueMay28">
+    <div className="live-lecture-wed-may-28">
+      <h2> Live Lecture Wed May 28</h2>
       <h3>Game Inventory</h3>
       <div className="myFlexBox">
         {games.map((game) => (

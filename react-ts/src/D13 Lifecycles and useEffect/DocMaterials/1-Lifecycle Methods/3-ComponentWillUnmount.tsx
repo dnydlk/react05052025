@@ -27,8 +27,8 @@ export default class ComponentWillUnmount extends Component<
     // * Update state
     console.warn("reder() called")
     return (
-      <div>
-        <h2>Life Cycle Method: ComponentWillUnmount</h2>
+      <div className="component-will-unmount">
+        <h4>Life Cycle Method: ComponentWillUnmount</h4>
         <button onClick={() => this.setState({ isShowing: !this.state.isShowing })}>
           Toggle Child Component
         </button>

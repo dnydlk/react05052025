@@ -27,8 +27,8 @@ export default class ComponentDidUpdate extends Component<{}, ComponentDidUpdate
     // * Update state
     // console.warn("reder() called")
     return (
-      <div>
-        <h2>Life Cycle Method: ComponentDidUpdate</h2>
+      <div className="component-did-update">
+        <h4>Life Cycle Method: ComponentDidUpdate</h4>
         <Child data={this.state.counter} />
         <button onClick={() => this.setState({ counter: this.state.counter + 1 })}>
           Update Counter: {this.state.counter}

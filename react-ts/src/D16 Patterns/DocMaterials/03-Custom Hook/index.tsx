@@ -2,7 +2,8 @@ import App from "./App"
 
 export default function CustomHooks() {
   return (
-    <div className="d16-custom-hook">
+    <div className="custom-hook">
+      <h3>Custom Hooks</h3>
       <App />
     </div>
   )

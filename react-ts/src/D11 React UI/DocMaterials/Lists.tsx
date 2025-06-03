@@ -8,7 +8,7 @@ export default function Lists() {
     { id: 3, name: "John", age: 26 },
   ]
   return (
-    <div id="lists">
+    <div className="lists">
       <h3>Lists</h3>
       {users.map((user) => {
         return <User key={user.id} {...user} />

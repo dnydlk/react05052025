@@ -1,14 +1,13 @@
-import HigherOrderComponents from "./01-Higher Order Components"
-import UseRef from "./02-useRef"
-import CustomHooks from "./03-Custom Hook"
+import DocMaterials from "./DocMaterials"
 
 export default function D16() {
+  const components = [DocMaterials]
   return (
-    <div className="d16">
-      <h2>D16 Patterns</h2>
-      {/* <HigherOrderComponents /> */}
-      {/* <UseRef /> */}
-      <CustomHooks />
+    <div className="day16-patterns">
+      <h1>D16 Patterns</h1>
+      {components.map((Component, i) => {
+        return <Component key={`${i} Component`} />
+      })}
     </div>
   )
 }

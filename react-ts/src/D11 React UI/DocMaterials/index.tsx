@@ -3,20 +3,16 @@ import Lists from "./Lists"
 import Rendering from "./Rendering"
 import States from "./States"
 import Welcome from "./ClassComponents"
+import { getDisplayContent } from "../../utils/utility functions"
 
 export default function DocMaterials() {
+  const components = [Components, Rendering, Lists, States, Welcome]
+  const displatContent = getDisplayContent(components, "hr2")
+
   return (
-    <div className="d11-doc-materials">
-      <h2>Class Materials</h2>
-      <Components />
-      <hr className="hr2" />
-      <Rendering />
-      <hr className="hr2" />
-      <Lists />
-      <hr className="hr2" />
-      <States />
-      <hr className="hr2" />
-      <Welcome />
+    <div className="doc-materials">
+      <h2>Goolge Doc Materials</h2>
+      {displatContent}
     </div>
   )
 }
