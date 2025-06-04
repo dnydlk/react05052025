@@ -1,4 +1,4 @@
-import type { MyButtonProps } from "./lib/types"
+import type { MyButtonProps } from "../lib/types"
 
 export default function MyButton({ className, onClickFn, buttonText }: MyButtonProps) {
   return (

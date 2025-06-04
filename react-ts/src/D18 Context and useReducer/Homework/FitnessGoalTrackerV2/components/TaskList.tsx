@@ -1,6 +1,6 @@
 import { useContext } from "react"
 import TaskItem from "./TaskItem"
-import { GoalsContext } from "../context/TodoCentext"
+import { GoalsContext } from "../context/GoalsCentext"
 
 export default function TaskList() {
   const goalsContext = useContext(GoalsContext)

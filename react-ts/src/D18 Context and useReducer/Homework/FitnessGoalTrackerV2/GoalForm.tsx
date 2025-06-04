@@ -6,7 +6,7 @@ import {
   fitnessCategoriesValues,
   initialGoalObjArr,
 } from "./data"
-import { GoalsContext } from "./context/TodoCentext"
+import { GoalsContext } from "./context/GoalsCentext"
 import MyInput from "./components/MyInput"
 import MySelect from "./components/MySelect"
 import MyButton from "./components/MyButton"
