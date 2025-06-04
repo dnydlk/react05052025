@@ -1,5 +1,5 @@
 import TaskItem from "./TaskItem"
-import { useGoalsContext } from "../context/GoalsCentext"
+import { useGoalsContext } from "../context/GoalsContext"
 
 export default function TaskList() {
   const { goals, toggleAchieve, handleDeleteGoal } = useGoalsContext()
