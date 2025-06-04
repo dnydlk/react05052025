@@ -1,16 +1,42 @@
-:root {
+:root[data-theme="light"] {
   --btn-font-color: #fcfcfc;
   --label-color: #504f4f;
+  --bg-primary: #ffffff;
+  --text-primary: #000000;
+  --border-color: #000000;
+  --input-bg: #ffffff;
+  --add-btn-bg: #4d9b48;
+  --achieved-btn-bg: #2f6df6;
+  --delete-btn-bg: #e33e3e;
+}
+
+:root[data-theme="dark"] {
+  --btn-font-color: #fcfcfc;
+  --label-color: #b8b8b8;
+  --bg-primary: #1a1a1a;
+  --text-primary: #ffffff;
+  --border-color: #666666;
+  --input-bg: #2d2d2d;
+  --add-btn-bg: #5cb85c;
+  --achieved-btn-bg: #5bc0de;
+  --delete-btn-bg: #d9534f;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
 }
 
 .fitness-goal-tracker {
-  border: 1px solid black;
+  border: 1px solid var(--border-color);
   padding: 15px;
   width: 500px;
+  background-color: var(--bg-primary);
 }
 
 .fitness-goal-tracker h2 {
   text-align: center;
+  color: var(--text-primary);
 }
 
 form > div {
@@ -30,6 +56,9 @@ form > div {
   width: 100%;
   margin: 0 auto;
   height: 29px;
+  background-color: var(--input-bg);
+  color: var(--text-primary);
+  border: 1px solid var(--label-color);
 }
 
 .fitness-goal-tracker input {
@@ -38,9 +67,11 @@ form > div {
 
 .fitness-goal-tracker .add-btn {
   padding: 7px 0px 25px;
-  background-color: #4d9b48;
+  background-color: var(--add-btn-bg);
   color: var(--btn-font-color);
   font-size: 0.9em;
+  border: none;
+  cursor: pointer;
 }
 
 .fitness-goal-tracker .task {
@@ -51,6 +82,7 @@ form > div {
   border: 1px solid var(--label-color);
   border-radius: 8px;
   font-size: 0.9em;
+  background-color: var(--bg-primary);
 }
 
 .fitness-goal-tracker .mark-btn {
@@ -58,15 +90,32 @@ form > div {
 }
 
 .achieved-btn {
-  background-color: #2f6df6;
+  background-color: var(--achieved-btn-bg);
   color: var(--btn-font-color);
+  border: none;
+  cursor: pointer;
 }
 
 .delete-btn {
-  background-color: #e33e3e;
+  background-color: var(--delete-btn-bg);
   color: var(--btn-font-color);
+  border: none;
+  cursor: pointer;
 }
 
 .task p {
   margin-left: 8px;
+  color: var(--text-primary);
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: 1px solid var(--label-color);
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 1.2em;
 }
