@@ -1,4 +1,4 @@
-import { useContext, useState } from "react"
+import { useState } from "react"
 import type { GoalType } from "../lib/types"
 import {
   fitnessCategories,
@@ -6,7 +6,7 @@ import {
   fitnessCategoriesValues,
   initialGoalObjArr,
 } from "../data"
-import { GoalsContext } from "../context/GoalsCentext"
+import { useGoalsContext } from "../context/GoalsCentext"
 import MyInput from "./MyInput"
 import MySelect from "./MySelect"
 import MyButton from "./MyButton"
@@ -16,13 +16,7 @@ export default function GoalForm() {
   const [numberValue, setNumberValue] = useState("")
   const [currentId, setCurrentId] = useState(initialGoalObjArr.length)
   const [selectedCategoryId, setSelectedCategoryId] = useState(fitnessCategoriesId[0])
-
-  const goalsContext = useContext(GoalsContext)
-  if (!goalsContext) {
-    console.log("📌 ~ GoalForm ~ goalsContext:", goalsContext)
-    return null
-  }
-  const { addGoal } = goalsContext
+  const { addGoal } = useGoalsContext()
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()

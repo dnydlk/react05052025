@@ -1,16 +1,17 @@
-import { createContext, useState } from "react"
+import { createContext, useContext, useState } from "react"
 import { initialGoalObjArr } from "../data"
 import { sortGoals } from "../util"
-import type { AchieveGoalHandler, DeleteGoalHandler, GoalType } from "../lib/types"
+import type { GoalsContextTypes, GoalType } from "../lib/types"
 
-type GoalsContextType = {
-  goals: GoalType[]
-  toggleAchieve: AchieveGoalHandler
-  handleDeleteGoal: DeleteGoalHandler
-  addGoal: (newGoal: GoalType) => void
+const GoalsContext = createContext<GoalsContextTypes | null>(null)
+
+export const useGoalsContext = () => {
+  const context = useContext(GoalsContext)
+  if (!context) {
+    throw new Error("useGoals must be used within GoalsProvider")
+  }
+  return context
 }
-
-export const GoalsContext = createContext<GoalsContextType | null>(null)
 
 export function GoalsProvider({ children }: { children: React.ReactElement }) {
   const [goals, setGoals] = useState(initialGoalObjArr)

@@ -49,6 +49,13 @@ type MySelectProps = {
   options: JSX.Element[]
 }
 
+type GoalsContextTypes = {
+  goals: GoalType[]
+  toggleAchieve: AchieveGoalHandler
+  handleDeleteGoal: DeleteGoalHandler
+  addGoal: (newGoal: GoalType) => void
+}
+
 export type {
   InputProps,
   GoalType,
@@ -59,4 +66,5 @@ export type {
   MySelectProps,
   AchieveGoalHandler,
   DeleteGoalHandler,
+  GoalsContextTypes,
 }
