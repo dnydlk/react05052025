@@ -1,7 +1,7 @@
 import "./App.css"
 import TaskList from "./components/TaskList"
 import { GoalsProvider } from "./context/GoalsCentext"
-import GoalForm from "./GoalForm"
+import GoalForm from "./components/GoalForm"
 
 export default function App() {
   return (

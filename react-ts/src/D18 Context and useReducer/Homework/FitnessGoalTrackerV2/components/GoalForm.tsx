@@ -1,15 +1,15 @@
 import { useContext, useState } from "react"
-import type { GoalType } from "./lib/types"
+import type { GoalType } from "../lib/types"
 import {
   fitnessCategories,
   fitnessCategoriesId,
   fitnessCategoriesValues,
   initialGoalObjArr,
-} from "./data"
-import { GoalsContext } from "./context/GoalsCentext"
-import MyInput from "./components/MyInput"
-import MySelect from "./components/MySelect"
-import MyButton from "./components/MyButton"
+} from "../data"
+import { GoalsContext } from "../context/GoalsCentext"
+import MyInput from "./MyInput"
+import MySelect from "./MySelect"
+import MyButton from "./MyButton"
 
 export default function GoalForm() {
   const [goalInput, setGoalInput] = useState("")
