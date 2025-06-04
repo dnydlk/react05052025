@@ -37,7 +37,7 @@ type TaskListProps = {
 
 type MyButtonProps = {
   className: string
-  onClickFn: React.MouseEventHandler<HTMLButtonElement>
+  onClickFn?: React.MouseEventHandler<HTMLButtonElement>
   buttonText: string
 }
 
@@ -57,4 +57,6 @@ export type {
   TaskListProps,
   MyButtonProps,
   MySelectProps,
+  AchieveGoalHandler,
+  DeleteGoalHandler,
 }

@@ -13,8 +13,7 @@
   text-align: center;
 }
 
-.fitness-goal-tracker > div {
-  /* border: 1px solid red; */
+form > div {
   margin-bottom: 10px;
 }
 

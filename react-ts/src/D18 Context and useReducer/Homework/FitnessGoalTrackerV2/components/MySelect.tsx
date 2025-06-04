@@ -1,4 +1,4 @@
-import type { MySelectProps } from "./lib/types"
+import type { MySelectProps } from "../lib/types"
 
 export default function MySelect({
   label,

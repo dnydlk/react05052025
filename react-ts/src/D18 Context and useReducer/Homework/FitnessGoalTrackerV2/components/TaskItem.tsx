@@ -1,4 +1,4 @@
-import type { TaskItemProps } from "./lib/types"
+import type { TaskItemProps } from "../lib/types"
 import MyButton from "./MyButton"
 
 export default function TaskItem({

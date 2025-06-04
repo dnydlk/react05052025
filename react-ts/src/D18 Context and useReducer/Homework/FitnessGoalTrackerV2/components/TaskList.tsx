@@ -1,11 +1,15 @@
-import type { TaskListProps } from "./lib/types"
+import { useContext } from "react"
 import TaskItem from "./TaskItem"
+import { GoalsContext } from "../context/TodoCentext"
 
-export default function TaskList({
-  goals,
-  handleDeleteGoal,
-  toggleAchieve,
-}: TaskListProps) {
+export default function TaskList() {
+  const goalsContext = useContext(GoalsContext)
+  if (!goalsContext) {
+    console.log("📌 ~ TaskList ~ goalsContext:", goalsContext)
+    return null
+  }
+  const { goals, toggleAchieve, handleDeleteGoal } = goalsContext
+
   return (
     <>
       {goals.map(({ id, title, category, number, exerciseType, isAchieved }) => {

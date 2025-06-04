@@ -1,6 +1,6 @@
-import type { InputProps } from "./lib/types"
+import type { InputProps } from "../lib/types"
 
-export default function Input({
+export default function MyInput({
   label,
   name,
   placeholder,
