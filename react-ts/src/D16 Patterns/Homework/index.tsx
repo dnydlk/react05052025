@@ -1,4 +1,4 @@
-import App from "./App"
+import App from "./FitnessGoalTrackerV1/App"
 
 export default function Homework() {
   return (

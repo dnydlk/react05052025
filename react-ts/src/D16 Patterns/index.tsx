@@ -1,6 +1,7 @@
 import DocMaterials from "./DocMaterials"
 import Homework from "./Homework"
 
+
 export default function D16() {
   // const components = [DocMaterials, Homework]
   // - [note]: temporarily only displaying Homework

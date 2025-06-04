@@ -94,7 +94,7 @@ export default function App() {
 
   return (
     <div className="fitness-goal-tracker">
-      <h2>Fitness Goal Tracker</h2>
+      <h2>Fitness Goal Tracker V1</h2>
       <div>
         <label htmlFor="fitness-goal">Fitness Goal</label>
         <input

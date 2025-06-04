@@ -21,6 +21,7 @@
 .fitness-goal-tracker label {
   color: var(--label-color);
   font-size: 0.85em;
+  display: block;
 }
 
 .fitness-goal-tracker input,
