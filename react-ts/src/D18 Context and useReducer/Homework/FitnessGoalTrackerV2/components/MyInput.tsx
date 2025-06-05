@@ -23,3 +23,7 @@ export default function MyInput({
     </div>
   )
 }
+
+// [todo] use ...rest in the props 
+// [todo] same comp same props, put props in the component and export them 
+// [todo] same comp same props, put props in the component & 

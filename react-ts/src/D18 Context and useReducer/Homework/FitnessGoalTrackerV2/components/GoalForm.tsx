@@ -15,6 +15,8 @@ export default function GoalForm() {
   const [goalInput, setGoalInput] = useState("")
   const [numberValue, setNumberValue] = useState("")
   const [currentId, setCurrentId] = useState(initialGoalObjArr.length)
+  // [todo] this is not good => uuid()
+  // unnececcsary state
   const [selectedCategoryId, setSelectedCategoryId] = useState(fitnessCategoriesId[0])
   const { addGoal } = useGoalsContext()
 
@@ -23,6 +25,9 @@ export default function GoalForm() {
 
     if (!goalInput.trim() || !numberValue) return
 
+    // [todo] use uuid
+    // dummy json - add a new product - server returns the id for us
+    // [note] tell the interviewer that id is getting from server but we're doing it here just for now
     const newGoal: GoalType = {
       id: currentId + 1,
       title: goalInput,
@@ -36,6 +41,7 @@ export default function GoalForm() {
     setCurrentId((prevId) => prevId + 1)
     setGoalInput("")
     setNumberValue("")
+    // [todo] this is too long
   }
 
   const handleCategoryChange = ({
