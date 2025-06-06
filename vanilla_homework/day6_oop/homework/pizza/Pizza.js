@@ -19,7 +19,7 @@ export const BASE_PRICE = {
   small: 6.5,
   medium: 7.5,
   large: 8.5,
-};
+}
 
 export const TOPPINGS = {
   p: { cost: 1.5, name: "pepperoni" },
@@ -28,14 +28,37 @@ export const TOPPINGS = {
   bo: { cost: 0.2, name: "black olive" },
   m: { cost: 0.82, name: "mushroom" },
   c: { cost: 0.77, name: "cheese" },
-};
+}
 
 export default class Pizza {
-  constructor(size, toppingCodes) {}
+  constructor(size, toppingCodes) {
+    this.size = size
+    this.toppingCodes = toppingCodes
+  }
 
-  getBaseCost() {}
+  getBaseCost() {
+    switch (this.size) {
+      case Object.keys(BASE_PRICE)[0]:
+        return BASE_PRICE.small
+      case Object.keys(BASE_PRICE)[1]:
+        return BASE_PRICE.medium
+      case Object.keys(BASE_PRICE)[2]:
+        return BASE_PRICE.large
 
-  getTotalCost() {}
+      default:
+        return null
+    }
+  }
 
-  getDescription() {}
+  getTotalCost() {
+    let totalToppingCost = 0
+    this.toppingCodes.forEach((t) => (totalToppingCost += TOPPINGS[t].cost))
+    return this.getBaseCost() + totalToppingCost
+  }
+
+  getDescription() {
+    let toppings = []
+    this.toppingCodes.forEach((c) => toppings.push(TOPPINGS[c].name))
+    return `A ${this.size} pizza with ${toppings.join(", ")}.`
+  }
 }

@@ -9,15 +9,25 @@
 
 export default class Order {
   constructor() {
-    this.pizzas = [];
-    this.status = "pending";
+    this.pizzas = []
+    this.status = "pending"
   }
 
-  addPizza(pizza) {}
+  addPizza(pizza) {
+    this.pizzas.push(pizza)
+  }
 
-  removePizza(index) {}
+  removePizza(index) {
+    this.pizzas.splice(index, 1)
+  }
 
-  getTotalCost() {}
+  getTotalCost() {
+    let totalCost = 0
+    this.pizzas.forEach((p) => (totalCost += p.getTotalCost()))
+    return totalCost
+  }
 
-  updateStatus(newStatus) {}
+  updateStatus(newStatus) {
+    this.status = newStatus
+  }
 }
