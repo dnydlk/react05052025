@@ -3,14 +3,12 @@ import {
   ADD_TODO_FAILURE,
   ADD_TODO_REQUEST,
   ADD_TODO_SUCCESS,
-  DELETE_TODO,
   DELETE_TODO_FAILURE,
   DELETE_TODO_REQUEST,
   DELETE_TODO_SUCCESS,
   FETCH_TODOS_FAILURE,
   FETCH_TODOS_REQUEST,
   FETCH_TODOS_SUCCESS,
-  TOGGLE_TODO,
   TOGGLE_TODO_FAILURE,
   TOGGLE_TODO_REQUEST,
   TOGGLE_TODO_SUCCESS,
@@ -157,7 +155,6 @@ export const fetchTodos = () => {
     await sleep(600)
     try {
       const response = await axios.get(api.todos.getAll())
-      console.log("Server response:", response.data) // Add this log
       dispatch(fetchTodosSuccess(response.data))
     } catch (error) {
       dispatch(fetchTodosFailure(error.message))

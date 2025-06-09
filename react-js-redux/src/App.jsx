@@ -1,10 +1,10 @@
 import "./App.css"
-import Redux from "./D19 Redux"
+import D19 from "./D19 Redux"
 
 function App() {
   return (
     <div className="app">
-      <Redux />
+      <D19 />
     </div>
   )
 }
