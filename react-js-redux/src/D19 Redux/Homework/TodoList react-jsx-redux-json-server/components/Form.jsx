@@ -5,16 +5,15 @@ import { addTodo } from "../redux/todoActions"
 
 export default function Form() {
   const [inputValue, setInputValue] = useState("")
-  // [todo] change placeholder to another way of reminding the user to must have input
-  const [placeholder, setPlaceholder] = useState("")
+  const [warning, setWarning] = useState(false)
   const dispatch = useDispatch()
   const handleAdd = () => {
     if (inputValue.trim().length === 0) {
-      setPlaceholder("Must provide content")
+      setWarning(true)
       return
     }
+    setWarning(false)
     dispatch(addTodo(inputValue))
-    setPlaceholder("")
     setInputValue("")
   }
 
@@ -26,11 +25,11 @@ export default function Form() {
           name="todo-title"
           type="text"
           value={inputValue}
-          placeholder={placeholder}
           onChange={(e) => setInputValue(e.target.value)}
         />
         <Button onClick={() => handleAdd()}>+</Button>
       </div>
+      {warning && <p className="warning-text">Please provide content</p>}
     </>
   )
 }
