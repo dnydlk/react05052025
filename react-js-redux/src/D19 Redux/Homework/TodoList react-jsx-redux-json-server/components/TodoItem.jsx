@@ -3,6 +3,7 @@ import { deleteTodo, toggleTodo } from "../redux/todoActions"
 
 export default function TodoItem({ id, title, isCompleted }) {
   const dispatch = useDispatch()
+
   return (
     <div className="todo-item">
       <input
