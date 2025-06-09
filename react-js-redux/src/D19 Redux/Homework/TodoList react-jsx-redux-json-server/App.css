@@ -124,6 +124,9 @@ button {
 .todo-list {
   margin-top: 2rem;
   align-self: stretch;
+  flex: 1 1 auto ;
+  overflow-y: auto;
+  max-height: 100%;
 }
 
 .todo-item {
