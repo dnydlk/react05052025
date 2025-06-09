@@ -13,7 +13,7 @@ import {
   TOGGLE_TODO_REQUEST,
   TOGGLE_TODO_SUCCESS,
 } from "./todoTypes"
-import { api } from "../config/api"
+import { api } from "../api/api"
 
 // - Add todo
 export const addTodosRequest = () => {
