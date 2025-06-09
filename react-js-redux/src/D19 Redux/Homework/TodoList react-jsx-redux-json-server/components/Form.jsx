@@ -26,6 +26,9 @@ export default function Form() {
           type="text"
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") handleAdd()
+          }}
         />
         <Button onClick={() => handleAdd()}>+</Button>
       </div>
