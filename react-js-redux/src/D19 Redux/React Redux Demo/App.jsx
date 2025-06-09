@@ -6,6 +6,7 @@ import IceCreamContainer from "./components/iceCreamContainer"
 import HotdogContainer from "./components/hotdogContainer"
 import NewCakeContainer from "./components/NewCakeContainer"
 import ItemContainer from "./components/ItemContainer"
+import UserContainer from "./components/UserContainer"
 
 export default function App() {
   return (
@@ -19,6 +20,7 @@ export default function App() {
         <NewCakeContainer />
         <ItemContainer cake />
         <ItemContainer />
+        <UserContainer />
       </Provider>
     </div>
   )
