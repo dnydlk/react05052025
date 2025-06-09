@@ -1,5 +1,4 @@
 import { useDispatch } from "react-redux"
-import Button from "./Button"
 import { deleteTodo, toggleTodo } from "../redux/todoActions"
 
 export default function TodoItem({ id, title, isCompleted }) {
@@ -13,7 +12,7 @@ export default function TodoItem({ id, title, isCompleted }) {
         onChange={() => dispatch(toggleTodo(id))}
       />
       <label htmlFor={id}>{title}</label>
-      <Button onClick={() => dispatch(deleteTodo(id))}>X</Button>
+      <button onClick={() => dispatch(deleteTodo(id))}>X</button>
     </div>
   )
 }
