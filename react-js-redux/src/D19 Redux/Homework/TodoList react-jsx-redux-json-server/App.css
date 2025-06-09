@@ -140,6 +140,15 @@ button {
 
 .todo-item label {
   text-align: left;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: border-color 0.5s
+}
+
+.todo-item input:hover, .todo-item label:hover {
+  cursor: pointer;
+  border-color: #4b4c9c;
 }
 
 .todo-item button {

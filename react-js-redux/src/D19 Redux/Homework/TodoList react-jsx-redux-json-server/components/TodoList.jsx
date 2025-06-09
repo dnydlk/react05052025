@@ -18,6 +18,5 @@ export default function TodoList() {
 
   if (loading) return <h2 className="loading">Loading...</h2>
   if (error) return <h2 className="error">Error: {error}</h2>
-
   return <div className="todo-list">{displayContent}</div>
 }
