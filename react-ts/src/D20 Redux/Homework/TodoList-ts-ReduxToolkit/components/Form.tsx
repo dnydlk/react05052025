@@ -20,7 +20,7 @@ export default function Form() {
 
   return (
     <>
-      <h2>To Do List</h2>
+      <h2>To Do List TS-ReduxToolkit</h2>
       <form className="form" onSubmit={handleSubmit}>
         <input
           name="form-input"

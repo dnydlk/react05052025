@@ -3,7 +3,7 @@ import type { TodoItem } from "../../components/TodoItem"
 import type { RootStore } from "../store"
 import axios from "axios"
 import { api } from "../../api/api"
-import { sleep } from "../../util"
+import { sleep, sortTodo as sortTodos } from "../../util"
 
 export interface TodoState {
   todos: TodoItem[]
@@ -28,7 +28,7 @@ export const todoSlice = createSlice({
         state.loading = true
       })
       .addCase(fetchTodosAsync.fulfilled, (state, action) => {
-        state.todos = action.payload
+        state.todos = sortTodos(action.payload)
         state.loading = false
         state.error = ""
       })
@@ -42,6 +42,7 @@ export const todoSlice = createSlice({
       })
       .addCase(addTodoAsync.fulfilled, (state, action: PayloadAction<TodoItem>) => {
         state.todos.push(action.payload)
+        state.todos = sortTodos(state.todos)
       })
       .addCase(addTodoAsync.rejected, (state, action) => {
         state.error = action.error.message || "Falied to add todo"
@@ -54,6 +55,7 @@ export const todoSlice = createSlice({
         const index = state.todos.findIndex((todo) => todo.id === action.payload.id)
         if (index !== -1) {
           state.todos[index] = action.payload
+          state.todos = sortTodos(state.todos)
         }
         state.loading = false
         state.error = ""

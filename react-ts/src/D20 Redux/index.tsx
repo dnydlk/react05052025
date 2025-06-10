@@ -1,4 +1,4 @@
-import Homework from "./Homework/TodoList-ts-Redux-js-server"
+import Homework from "./Homework/TodoList-ts-ReduxToolkit"
 
 export default function D20() {
   const components = [Homework]
