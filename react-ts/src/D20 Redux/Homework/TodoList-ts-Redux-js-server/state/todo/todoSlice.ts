@@ -37,8 +37,18 @@ export const todoSlice = createSlice({
         state.error = action.error.message || "Failed to fetch todos"
       })
       // - Add Todos
+      .addCase(addTodoAsync.pending, (state) => {
+        state.error = ""
+      })
       .addCase(addTodoAsync.fulfilled, (state, action: PayloadAction<TodoItem>) => {
         state.todos.push(action.payload)
+      })
+      .addCase(addTodoAsync.rejected, (state, action) => {
+        state.error = action.error.message || "Falied to add todo"
+      })
+      // - Toggle Todos
+      .addCase(toggleTodoAsync.pending, (state) => {
+        state.error = ""
       })
       .addCase(toggleTodoAsync.fulfilled, (state, action) => {
         const index = state.todos.findIndex((todo) => todo.id === action.payload.id)
@@ -48,37 +58,44 @@ export const todoSlice = createSlice({
         state.loading = false
         state.error = ""
       })
-      // - Toggle Todo
       .addCase(toggleTodoAsync.rejected, (state, action) => {
         state.loading = false
         state.error = action.error.message || "Failed to toggle todo"
       })
       // - Delete Todo
+      .addCase(deleteTodoAsync.pending, (state) => {
+        state.error = ""
+      })
       .addCase(deleteTodoAsync.fulfilled, (state, action: PayloadAction<TodoItem>) => {
         state.todos = state.todos.filter((t) => t.id !== action.payload.id)
+      })
+      .addCase(deleteTodoAsync.rejected, (state, action) => {
+        state.error = action.error.message || "Failed to delete todo"
       })
   },
 })
 
-export const fetchTodosAsync = createAsyncThunk("todos/fetchTodos", async () => {
+export const fetchTodosAsync = createAsyncThunk<TodoItem[]>("todos/fetchTodos", async () => {
   await sleep(400)
   const response = await axios.get(api.getAll())
   return response.data
 })
 
-export const addTodoAsync = createAsyncThunk("todos/addTodo", async (title: string) => {
-  const response = await axios.post(api.create(), {
-    title: title.trim(),
-    completed: false,
-  })
-  return response.data
-})
+export const addTodoAsync = createAsyncThunk<TodoItem, string>(
+  "todos/addTodo",
+  async (title) => {
+    const response = await axios.post(api.create(), {
+      title: title.trim(),
+      completed: false,
+    })
+    return response.data
+  }
+)
 
 export const deleteTodoAsync = createAsyncThunk(
   "todos/deleteTodo",
   async (todoId: string) => {
     const response = await axios.delete(api.delete(todoId))
-    console.log(JSON.stringify(response.data))
     return response.data
   }
 )
