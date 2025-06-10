@@ -22,7 +22,11 @@ export default function Form() {
     <>
       <h2>To Do List</h2>
       <form className="form" onSubmit={handleSubmit}>
-        <input value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
+        <input
+          name="form-input"
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
+        />
         <button type="submit">+</button>
       </form>
       {warning && <p className="warning-text">Please provide content</p>}
