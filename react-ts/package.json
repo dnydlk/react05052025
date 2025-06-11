@@ -8,7 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "server": "json-server 'src/D20 Redux/Homework/TodoList-ts-RTK-Query/database/db.json'"
+    "server": "json-server 'src/D21 Routing/Homework/TodoList-ts-RTK-Query/database/db.json'"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.8.2",
