@@ -1,5 +1,5 @@
 import TodoItem from "./TodoItem"
-import { useGetTodosQuery, type TodoItemTypes } from "../api/todoApi"
+import { useGetTodosQuery, type TodoItemTypes } from "../state/todoApi"
 import { useMemo } from "react"
 
 interface TodoListProps {

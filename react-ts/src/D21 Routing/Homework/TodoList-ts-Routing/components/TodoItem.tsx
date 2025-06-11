@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import { useDeleteTodoMutation, useToggleTodoMutation } from "../api/todoApi"
+import { useDeleteTodoMutation, useToggleTodoMutation } from "../state/todoApi"
 
 export interface TodoItemProps {
   id: string

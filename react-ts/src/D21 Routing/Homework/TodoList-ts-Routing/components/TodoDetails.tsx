@@ -3,7 +3,7 @@ import {
   useDeleteTodoMutation,
   useGetTodoByIdQuery,
   useUpdateTodoMutation,
-} from "../api/todoApi"
+} from "../state/todoApi"
 import { useState } from "react"
 
 export default function TodoDetails() {
@@ -89,9 +89,9 @@ export default function TodoDetails() {
         </div>
       ) : (
         <div>
-          <h2>{todo.title}</h2>
-          <p>Created: {todo.date ? new Date(todo.date).toLocaleDateString() : "N/A"}</p>
-          <p>Status: {todo.completed ? "✓ Completed" : "○ Active"}</p>
+          <h2 className={todo.completed ? "task-completed" : ""}>{todo.title}</h2>
+          <p>Created: {todo.date ? new Date(todo.date).toLocaleString() : "N/A"}</p>
+          <p>Status: {todo.completed ? "✓ Completed" : "○ Ongoing"}</p>
           <div>
             <p>Description:</p>
             <p>{todo.description || "No description added yet."}</p>

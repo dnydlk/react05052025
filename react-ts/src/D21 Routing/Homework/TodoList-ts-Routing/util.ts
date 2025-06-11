@@ -1,4 +1,4 @@
-import type { TodoItemTypes } from "./api/todoApi"
+import type { TodoItemTypes } from "./state/todoApi"
 
 export const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 
