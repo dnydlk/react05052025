@@ -1,0 +1,43 @@
+import { useDeleteTodoMutation, useToggleTodoMutation } from "../api/todoApi"
+
+export interface TodoItem {
+  id: string
+  title: string
+  completed: boolean
+}
+
+export default function TodoItem({ id, title, completed }: TodoItem) {
+  //*[note] useDeleteTodoMutation returns: [triggerFunction, resultObject]
+  //   triggerFunction (deleteTodo): Call this to execute the mutation
+  //   resultObject contains: isLoading, isSuccess, isError, data, error
+  //   .unwrap(): Allows you to handle the promise with try/catch
+  const [deleteTodo] = useDeleteTodoMutation()
+  // console.log(resultObject)
+  const [toggleTodo] = useToggleTodoMutation()
+
+  const handleDelete = async () => {
+    try {
+      await deleteTodo(id).unwrap()
+    } catch (error) {
+      console.error("Failed to delete todo:", error)
+    }
+  }
+
+  const handleToggle = async () => {
+    try {
+      await toggleTodo({ id, completed: !completed }).unwrap()
+    } catch (error) {
+      console.error("Failed to toggle todo:", error)
+    }
+  }
+
+  return (
+    <div className="todo-item">
+      <input type="checkbox" id={id} checked={completed} onChange={handleToggle} />
+      <label htmlFor={id} className={completed ? "task-completed" : ""}>
+        {title}
+      </label>
+      <button onClick={handleDelete}>X</button>
+    </div>
+  )
+}

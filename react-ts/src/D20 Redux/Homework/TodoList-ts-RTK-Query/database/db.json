@@ -1,0 +1,44 @@
+{
+  "todos": [
+    {
+      "id": "1",
+      "title": "coffee",
+      "completed": true
+    },
+    {
+      "id": "2",
+      "title": "macaron",
+      "completed": false
+    },
+    {
+      "id": "3",
+      "title": "pizza",
+      "completed": false
+    },
+    {
+      "id": "4",
+      "title": "pasta",
+      "completed": false
+    },
+    {
+      "id": "5",
+      "title": "burger",
+      "completed": false
+    },
+    {
+      "id": "6",
+      "title": "sushi",
+      "completed": false
+    },
+    {
+      "id": "7",
+      "title": "salad",
+      "completed": false
+    },
+    {
+      "id": "dd1f",
+      "title": "ice cream",
+      "completed": true
+    }
+  ]
+}
