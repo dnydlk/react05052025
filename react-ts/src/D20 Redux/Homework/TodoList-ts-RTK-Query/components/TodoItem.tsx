@@ -1,18 +1,17 @@
 import { useDeleteTodoMutation, useToggleTodoMutation } from "../api/todoApi"
 
-export interface TodoItem {
+export interface TodoItemProps {
   id: string
   title: string
   completed: boolean
 }
 
-export default function TodoItem({ id, title, completed }: TodoItem) {
+export default function TodoItem({ id, title, completed }: TodoItemProps) {
   //*[note] useDeleteTodoMutation returns: [triggerFunction, resultObject]
   //   triggerFunction (deleteTodo): Call this to execute the mutation
   //   resultObject contains: isLoading, isSuccess, isError, data, error
   //   .unwrap(): Allows you to handle the promise with try/catch
   const [deleteTodo] = useDeleteTodoMutation()
-  // console.log(resultObject)
   const [toggleTodo] = useToggleTodoMutation()
 
   const handleDelete = async () => {
@@ -33,10 +32,8 @@ export default function TodoItem({ id, title, completed }: TodoItem) {
 
   return (
     <div className="todo-item">
-      <input type="checkbox" id={id} checked={completed} onChange={handleToggle} />
-      <label htmlFor={id} className={completed ? "task-completed" : ""}>
-        {title}
-      </label>
+      <input type="checkbox" checked={completed} onChange={handleToggle} />
+      <label className={completed ? "task-completed" : ""}>{title}</label>
       <button onClick={handleDelete}>X</button>
     </div>
   )

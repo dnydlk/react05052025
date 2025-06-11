@@ -1,8 +1,15 @@
 import { api, BASE_URL } from "./api"
-import type { TodoItem } from "../components/TodoItem"
 // ![note] import the react specific entry point that automatically generates
 // ! hooks corresponding to the defined endpoints
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react"
+
+export interface TodoItemTypes {
+  id: string
+  title: string
+  completed: boolean
+  date: string
+  description?: string
+}
 
 // *[note]
 // createApi: core function to create an API slice
@@ -25,7 +32,7 @@ export const todoApi = createApi({
   }),
   tagTypes: ["Todo"],
   endpoints: (builder) => ({
-    getTodos: builder.query<TodoItem[], void>({
+    getTodos: builder.query<TodoItemTypes[], void>({
       query: () => api.getAll(),
       providesTags: ["Todo"],
       // * granular cache invalidation (didn't implement, reason at line 59)
@@ -41,14 +48,27 @@ export const todoApi = createApi({
       //   return sortTodo(response)
       // },
     }),
-    deleteTodo: builder.mutation<TodoItem, string>({
+    addTodo: builder.mutation<TodoItemTypes, string>({
+      query: (title) => ({
+        url: api.create(),
+        method: "POST",
+        body: {
+          title,
+          completed: false,
+          date: new Date().toISOString(),
+          description: "",
+        },
+      }),
+      invalidatesTags: ["Todo"],
+    }),
+    deleteTodo: builder.mutation<TodoItemTypes, string>({
       query: (todoId) => ({
         url: api.delete(todoId),
         method: "DELETE",
       }),
       invalidatesTags: ["Todo"],
     }),
-    toggleTodo: builder.mutation<TodoItem, { id: string; completed: boolean }>({
+    toggleTodo: builder.mutation<TodoItemTypes, { id: string; completed: boolean }>({
       query: ({ id, completed }) => ({
         url: api.update(id),
         method: "PATCH",
@@ -70,4 +90,9 @@ export const todoApi = createApi({
 
 //*[note] RTK Query's React integration will automatically generate
 // React hooks for every endpoint we define
-export const { useGetTodosQuery, useDeleteTodoMutation, useToggleTodoMutation } = todoApi
+export const {
+  useGetTodosQuery,
+  useDeleteTodoMutation,
+  useToggleTodoMutation,
+  useAddTodoMutation,
+} = todoApi

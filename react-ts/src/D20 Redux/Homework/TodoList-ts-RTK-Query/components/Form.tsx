@@ -1,21 +1,24 @@
 import { useState } from "react"
-import { useAppDispatch } from "../state/hooks"
-import { addTodoAsync } from "../state/todo/todoSlice"
+import { useAddTodoMutation } from "../api/todoApi"
 
 export default function Form() {
   const [inputValue, setInputValue] = useState("")
   const [warning, setWarning] = useState(false)
-  const dispatch = useAppDispatch()
+  const [addTodo] = useAddTodoMutation()
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     if (inputValue.trim().length === 0) {
       setWarning(true)
       return
     }
     setWarning(false)
-    dispatch(addTodoAsync(inputValue))
-    setInputValue("")
+    try {
+      await addTodo(inputValue.trim()).unwrap()
+      setInputValue("")
+    } catch (error) {
+      console.error("Failed to add todo:", error)
+    }
   }
 
   return (

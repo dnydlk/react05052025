@@ -3,16 +3,32 @@ import "./App.css"
 import Form from "./components/Form"
 import TodoList from "./components/TodoList"
 import { store } from "./state/store"
+import { BrowserRouter, Route, Switch } from "react-router-dom"
+import Nav from "./components/Nav"
+import { filterCompletedTodos, sortTodo } from "./util"
 
 export default function App() {
   return (
-    <div className="hw-todo-list">
-      <div className="card">
-        <Provider store={store}>
-          <Form />
-          <TodoList />
-        </Provider>
-      </div>
-    </div>
+    <BrowserRouter>
+      <Provider store={store}>
+        <div className="hw-todo-list">
+          <div className="card">
+            <Form />
+            <Nav />
+            <Switch>
+              <Route
+                exact
+                path="/"
+                render={() => <TodoList displayMethod={sortTodo} />}
+              />
+              <Route
+                path="/completed"
+                render={() => <TodoList displayMethod={filterCompletedTodos} />}
+              />
+            </Switch>
+          </div>
+        </div>
+      </Provider>
+    </BrowserRouter>
   )
 }

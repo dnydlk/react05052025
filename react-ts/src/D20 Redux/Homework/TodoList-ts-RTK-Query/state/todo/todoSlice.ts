@@ -1,12 +1,12 @@
 import { createAsyncThunk, createSlice, type PayloadAction } from "@reduxjs/toolkit"
-import type { TodoItem } from "../../components/TodoItem"
+import type { TodoItemProps } from "../../components/TodoItem"
 import type { RootStore } from "../store"
 import axios from "axios"
 import { api } from "../../api/api"
 import { sleep, sortTodo as sortTodos } from "../../util"
 
 export interface TodoState {
-  todos: TodoItem[]
+  todos: TodoItemProps[]
   loading: boolean
   error: string
 }
@@ -40,7 +40,7 @@ export const todoSlice = createSlice({
       .addCase(addTodoAsync.pending, (state) => {
         state.error = ""
       })
-      .addCase(addTodoAsync.fulfilled, (state, action: PayloadAction<TodoItem>) => {
+      .addCase(addTodoAsync.fulfilled, (state, action: PayloadAction<TodoItemProps>) => {
         state.todos.push(action.payload)
         state.todos = sortTodos(state.todos)
       })
@@ -68,22 +68,28 @@ export const todoSlice = createSlice({
       .addCase(deleteTodoAsync.pending, (state) => {
         state.error = ""
       })
-      .addCase(deleteTodoAsync.fulfilled, (state, action: PayloadAction<TodoItem>) => {
-        state.todos = state.todos.filter((t) => t.id !== action.payload.id)
-      })
+      .addCase(
+        deleteTodoAsync.fulfilled,
+        (state, action: PayloadAction<TodoItemProps>) => {
+          state.todos = state.todos.filter((t) => t.id !== action.payload.id)
+        }
+      )
       .addCase(deleteTodoAsync.rejected, (state, action) => {
         state.error = action.error.message || "Failed to delete todo"
       })
   },
 })
 
-export const fetchTodosAsync = createAsyncThunk<TodoItem[]>("todos/fetchTodos", async () => {
-  await sleep(400)
-  const response = await axios.get(api.getAll())
-  return response.data
-})
+export const fetchTodosAsync = createAsyncThunk<TodoItemProps[]>(
+  "todos/fetchTodos",
+  async () => {
+    await sleep(400)
+    const response = await axios.get(api.getAll())
+    return response.data
+  }
+)
 
-export const addTodoAsync = createAsyncThunk<TodoItem, string>(
+export const addTodoAsync = createAsyncThunk<TodoItemProps, string>(
   "todos/addTodo",
   async (title) => {
     const response = await axios.post(api.create(), {

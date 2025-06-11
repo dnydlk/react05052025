@@ -125,6 +125,26 @@ button {
   font-size: 1.1rem;
 }
 
+.nav {
+  list-style-type: none;
+  width: 500px;
+  display: flex;
+  margin: 1rem 0 -1rem 0;
+  padding: 0 0 0 3rem;
+  gap: 2rem;
+}
+
+.nav a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav a.active {
+  font-weight: bold;
+  color: #6563c4;
+  text-decoration: underline;
+}
+
 .todo-list {
   margin-top: 2rem;
   align-self: stretch;
