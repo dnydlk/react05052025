@@ -214,7 +214,6 @@ button {
 }
 
 .todo-details {
-  /* padding: 0.8rem 3rem; */
   margin-top: 2rem;
   display: flex;
   flex-direction: column;
@@ -226,4 +225,27 @@ button {
 
 .todo-details #back-btn {
   align-self: flex-start;
+  background-color: #b2b4e5;
+  color: #595BB8;
+}
+
+.view-mode, .edit-mode {
+  align-self: flex-start;
+}
+
+.view-mode * {
+  text-align: left;
+}
+
+.view-mode label {
+  font-weight: bold;
+}
+
+#edit-btn {
+  background-color: #6563c4;
+}
+
+#delete-btn {
+  color: inherit;
+  background-color: hsl(0, 92%, 62%)
 }
