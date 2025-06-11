@@ -48,6 +48,10 @@ export const todoApi = createApi({
       //   return sortTodo(response)
       // },
     }),
+    getTodoById: builder.query<TodoItemTypes, string>({
+      query: (id) => api.getById(id),
+      providesTags: (result, error, id) => [{ type: "Todo", id }],
+    }),
     addTodo: builder.mutation<TodoItemTypes, string>({
       query: (title) => ({
         url: api.create(),
@@ -58,6 +62,17 @@ export const todoApi = createApi({
           date: new Date().toISOString(),
           description: "",
         },
+      }),
+      invalidatesTags: ["Todo"],
+    }),
+    updateTodo: builder.mutation<
+      TodoItemTypes,
+      { id: string; title: string; description: string }
+    >({
+      query: ({ id, ...updates }) => ({
+        url: api.update(id),
+        method: "PATCH",
+        body: updates,
       }),
       invalidatesTags: ["Todo"],
     }),
@@ -95,4 +110,6 @@ export const {
   useDeleteTodoMutation,
   useToggleTodoMutation,
   useAddTodoMutation,
+  useGetTodoByIdQuery,
+  useUpdateTodoMutation,
 } = todoApi

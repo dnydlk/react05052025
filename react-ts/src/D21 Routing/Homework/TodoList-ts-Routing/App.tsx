@@ -6,6 +6,7 @@ import { store } from "./state/store"
 import { BrowserRouter, Route, Switch } from "react-router-dom"
 import Nav from "./components/Nav"
 import { filterCompletedTodos, sortTodo } from "./util"
+import TodoDetails from "./components/TodoDetails"
 
 export default function App() {
   return (
@@ -25,6 +26,7 @@ export default function App() {
                 path="/completed"
                 render={() => <TodoList displayMethod={filterCompletedTodos} />}
               />
+              <Route path="/todo/:id" component={TodoDetails} />
             </Switch>
           </div>
         </div>

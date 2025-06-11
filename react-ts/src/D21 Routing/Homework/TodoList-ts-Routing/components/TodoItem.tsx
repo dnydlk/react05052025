@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import { useDeleteTodoMutation, useToggleTodoMutation } from "../api/todoApi"
 
 export interface TodoItemProps {
@@ -33,7 +34,9 @@ export default function TodoItem({ id, title, completed }: TodoItemProps) {
   return (
     <div className="todo-item">
       <input type="checkbox" checked={completed} onChange={handleToggle} />
-      <label className={completed ? "task-completed" : ""}>{title}</label>
+      <Link to={`/todo/${id}`} className="todo-link">
+        <label className={completed ? "task-completed" : ""}>{title}</label>
+      </Link>
       <button onClick={handleDelete}>X</button>
     </div>
   )

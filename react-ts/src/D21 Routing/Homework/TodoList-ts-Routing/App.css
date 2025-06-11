@@ -173,6 +173,12 @@ button {
   transition: border-color 0.5s;
 }
 
+.todo-link {
+  text-decoration: none;
+  color: inherit;
+  text-align: left;
+}
+
 .task-completed {
   text-decoration: line-through;
 }
@@ -205,4 +211,19 @@ button {
   color: hsl(282, 85%, 50%);
   margin: 0 0 -1rem 0;
   font-weight: bold;
+}
+
+.todo-details {
+  /* padding: 0.8rem 3rem; */
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  /* flex: 1 1 auto; */
+  /* overflow-y: auto; */
+  /* max-height: 100%; */
+}
+
+.todo-details #back-btn {
+  align-self: flex-start;
 }
