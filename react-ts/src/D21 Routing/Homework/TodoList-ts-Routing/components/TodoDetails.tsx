@@ -69,7 +69,7 @@ export default function TodoDetails() {
       </button>
       {/* <code>{JSON.stringify(todo)}</code> */}
       {isEditing ? (
-        <div>
+        <div className="edit-mode">
           <input
             type="text"
             value={editedTitle}
@@ -88,17 +88,25 @@ export default function TodoDetails() {
           </div>
         </div>
       ) : (
-        <div>
+        <div className="view-mode">
           <h2 className={todo.completed ? "task-completed" : ""}>{todo.title}</h2>
-          <p>Created: {todo.date ? new Date(todo.date).toLocaleString() : "N/A"}</p>
-          <p>Status: {todo.completed ? "✓ Completed" : "○ Ongoing"}</p>
+          <p>
+            <label>Created:</label>
+            <span>{todo.date ? new Date(todo.date).toLocaleString() : "N/A"}</span>
+          </p>
+          <p>
+            <label>Status: </label>
+            <span>{todo.completed ? "✓ Completed" : "○ Ongoing"}</span>
+          </p>
+          <p>
+            <label>Description: </label>
+            <span>{todo.description || "No description added yet."}</span>
+          </p>
           <div>
-            <p>Description:</p>
-            <p>{todo.description || "No description added yet."}</p>
-          </div>
-          <div>
-            <button onClick={handleEdit}>Edit</button>
-            <button onClick={handleDelete} className="delete-button">
+            <button id="edit-btn" onClick={handleEdit}>
+              Edit
+            </button>
+            <button id="delete-btn" onClick={handleDelete} className="delete-button">
               Delete
             </button>
           </div>
