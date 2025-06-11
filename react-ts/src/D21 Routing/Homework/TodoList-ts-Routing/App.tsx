@@ -20,11 +20,11 @@ export default function App() {
               <Route
                 exact
                 path="/"
-                render={() => <TodoList displayMethod={sortTodo} />}
+                render={() => <TodoList utilityFunction={sortTodo} />}
               />
               <Route
                 path="/completed"
-                render={() => <TodoList displayMethod={filterCompletedTodos} />}
+                render={() => <TodoList utilityFunction={filterCompletedTodos} />}
               />
               <Route path="/todo/:id" component={TodoDetails} />
             </Switch>
