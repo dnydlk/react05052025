@@ -3,22 +3,22 @@ import { useGetTodosQuery, type TodoItemTypes } from "../state/todoApi"
 import { useMemo } from "react"
 
 interface TodoListProps {
-  displayMethod: (todos: TodoItemTypes[]) => TodoItemTypes[]
+  utilityFunction: (todos: TodoItemTypes[]) => TodoItemTypes[]
 }
 
-export default function TodoList({ displayMethod }: TodoListProps) {
+export default function TodoList({ utilityFunction }: TodoListProps) {
   //*[note] useGetTodosQuery returns:
   //   data: the fetched data (undefined if not yet fetched)
   //   isLoading: boolean indicating if the query is currently loading
-  //   error: any error that occurred during the fetch
   //   isFetching: boolean indicating if the query is currently fetching
+  //   error: any error that occurred during the fetch
   //   refetch: function to manually refetch the data
   const { data, isLoading, error } = useGetTodosQuery()
 
   const todosToDisplay = useMemo(() => {
     if (!data) return []
-    return displayMethod(data)
-  }, [data, displayMethod])
+    return utilityFunction(data)
+  }, [data, utilityFunction])
 
   const displayContent =
     data &&
