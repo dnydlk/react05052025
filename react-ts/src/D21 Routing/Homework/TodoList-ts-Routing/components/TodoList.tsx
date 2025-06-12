@@ -37,3 +37,5 @@ export default function TodoList({ utilityFunction }: TodoListProps) {
   if (!data) return <h2 className="error">No todos</h2>
   return <div className="todo-list">{displayContent}</div>
 }
+
+// [note] completed one might have more features than all todos.
