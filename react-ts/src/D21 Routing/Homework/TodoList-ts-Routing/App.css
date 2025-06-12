@@ -237,7 +237,7 @@ button {
   text-align: left;
 }
 
-.view-mode label {
+.view-mode label, .edit-mode label {
   font-weight: bold;
 }
 

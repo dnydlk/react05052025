@@ -24,7 +24,6 @@ export default function Form() {
   return (
     <>
       <h2>To Do List</h2>
-      <span style={{ marginTop: "-1rem" }}>TS-RTK-Query w/ Routing</span>
       <form className="form" onSubmit={handleSubmit}>
         <input
           name="form-input"

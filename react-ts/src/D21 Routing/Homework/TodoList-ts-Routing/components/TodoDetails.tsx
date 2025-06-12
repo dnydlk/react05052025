@@ -70,18 +70,27 @@ export default function TodoDetails() {
       {/* <code>{JSON.stringify(todo)}</code> */}
       {isEditing ? (
         <div className="edit-mode">
-          <input
-            type="text"
-            value={editedTitle}
-            onChange={(e) => setEditedTitle(e.target.value)}
-            placeholder="Title"
-          />
-          <textarea
-            value={editedDescription}
-            onChange={(e) => setEditedDescription(e.target.value)}
-            placeholder="Description"
-            rows={4}
-          />
+          <div>
+            <label htmlFor="title">Title </label>
+            <input
+              name="title"
+              type="text"
+              value={editedTitle}
+              onChange={(e) => setEditedTitle(e.target.value)}
+              placeholder="Title"
+            />
+          </div>
+          <br />
+          <div>
+            <label htmlFor="description">Description</label>
+            <textarea
+              name="description"
+              value={editedDescription}
+              onChange={(e) => setEditedDescription(e.target.value)}
+              placeholder="Description"
+              rows={4}
+            />
+          </div>
           <div>
             <button onClick={handleSave}>Save</button>
             <button onClick={handleCancel}>Cancel</button>
