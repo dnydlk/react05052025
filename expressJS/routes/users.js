@@ -1,5 +1,6 @@
 const express = require("express")
 const router = express.Router()
+router.use(logger)
 
 router.get("", (req, res) => {
   res.send("User List")
@@ -39,10 +40,19 @@ router
     res.send(`Update user with ID: ${req.params.id}`)
   })
 
+//* .parem() runs any time it finds a param that mathces the name you passed in
+// e.g: :id will trigger .parem()
 const users = [{ name: "Kyle" }, { name: "Sally" }]
 router.param("id", (req, res, next, id) => {
-  req.user = users[id]
+  // req.randomVariableWeDecided = user[id]
+  req.user = users[id] // then see line 32
   next()
 })
+
+//* Middleware takes req, res, next
+function logger(req, res, next) {
+  console.log(req.originalUrl)
+  next()
+}
 
 module.exports = router

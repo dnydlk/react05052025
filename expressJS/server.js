@@ -1,19 +1,28 @@
 const express = require("express")
 const app = express()
 
-app.use(logger)
+app.set("view engine", "ejs")
+// use the middleware we defined
+// app.use(logger)
 
 app.get("/", (req, res) => {
-  res.status(200).json({ message: "200 Success!" })
+  // console.log("Hello")
+  // res.send("Hi")
+  // res.sendStatus(403)
+  // res.status(403).send("You're blocked!")
+  // res.status(403).json({ message: "You're blocked!" })
+  // res.json({ message: "Hello json!" })
+  // res.download("server.js")
+  // * render file
+  res.render("index", {
+    text: "this a the second parameter of res.render()",
+  })
+  // output: Error: No default engine was specified and no extension was provided.
+  // no views engine
+  // solution: npm install ejs -> views/index.ejs
 })
 
 const userRouter = require("./routes/users")
-
 app.use("/users", userRouter)
-
-function logger(req, res, next) {
-  console.log(req.originalUrl)
-  next()
-}
 
 app.listen(3000)
