@@ -1,3 +1,4 @@
+// https://www.youtube.com/watch?v=TlB_eWDSMt4&ab_channel=ProgrammingwithMosh
 //- Global Object
 // global.console.log("global console log")
 
@@ -10,7 +11,7 @@
 // const logger = require("./logger") // returns an object (see logger.js line 12)
 // logger.log("logging")
 const EventEmitter = require("events")
-const Logger = require("./logger") // a function (see logger.js line 18)
+const Logger = require("./mosh/logger") // a function (see logger.js line 18)
 const logger = new Logger()
 
 logger.on("messageLogged", (arg) => {
