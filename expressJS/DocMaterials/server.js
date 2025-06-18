@@ -1,6 +1,8 @@
 // https://www.youtube.com/watch?v=SccSCuHhOw0&ab_channel=WebDevSimplified
 
-const express = require("express")
+import express from "express"
+import userRouter from "./routes/users.js"
+
 const app = express()
 
 app.set("view engine", "ejs")
@@ -24,7 +26,6 @@ app.get("/", (req, res) => {
   // solution: npm install ejs -> views/index.ejs
 })
 
-const userRouter = require("./routes/users")
 app.use("/users", userRouter)
 
 app.listen(3000)

@@ -1,5 +1,6 @@
-const express = require("express")
-const router = express.Router()
+import { Router } from "express"
+const router = Router()
+
 router.use(logger)
 
 router.get("", (req, res) => {
@@ -13,19 +14,6 @@ router.get("/new", (req, res) => {
 router.post("/", (req, res) => {
   res.send("Created")
 })
-
-//! put dynamic route to the bottom
-// router.get("/:userId", (req, res) => {
-//   res.send(`Get user with Id: ${req.params.userId}`)
-// })
-
-// router.put("/:userId", (req, res) => {
-//   res.send(`Update user with Id: ${req.params.userId}`)
-// })
-
-// router.delete("/:userId", (req, res) => {
-//   res.send(`Delete user with Id: ${req.params.userId}`)
-// })
 
 router
   .route("/:id")
@@ -55,4 +43,4 @@ function logger(req, res, next) {
   next()
 }
 
-module.exports = router
+export default router
