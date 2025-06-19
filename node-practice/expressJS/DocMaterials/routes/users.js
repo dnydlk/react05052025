@@ -3,15 +3,27 @@ const router = Router()
 
 router.use(logger)
 
-router.get("", (req, res) => {
+router.get("/", (req, res) => {
+  //* Access query parameters
+  console.log(req.query.name)
   res.send("User List")
 })
 
 router.get("/new", (req, res) => {
-  res.send("User New Form")
+  // res.send("User New Form")
+  res.render("users/new", { firstName: "first name" })
 })
 
 router.post("/", (req, res) => {
+  const isValid = true
+  if (isValid) {
+    users.push({ firstName: req.body.firstName })
+    res.redirect(`/user s/${users.length - 1}`)
+  } else {
+    console.log("Error")
+    res.render("users/new", { firstName: req.body.firstName })
+  }
+  console.log(req.body.firstName)
   res.send("Created")
 })
 
