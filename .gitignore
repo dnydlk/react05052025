@@ -1,4 +1,3 @@
 .vscode/settings.json
 .DS_Store
-node-practice/expressJS/node_modules
-node-practice/nodeJS/node_modules
+node-practice/node_modules
