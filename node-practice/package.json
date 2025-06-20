@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "devStart": "nodemon todoApp/server.js",
-    "devStartAuth": "nodemon todoApp/authServer.js"
+    "devStart": "nodemon todoApp/server.js"
   },
   "keywords": [],
   "author": "",
