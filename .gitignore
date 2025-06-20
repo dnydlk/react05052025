@@ -1,3 +1,4 @@
 .vscode/settings.json
 .DS_Store
 node-practice/node_modules
+node-practice/.env
