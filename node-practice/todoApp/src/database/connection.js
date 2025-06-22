@@ -35,6 +35,12 @@ export const connectDatabase = async () => {
     await sequelize.sync()
     console.log("Database synced successfully.")
 
+    // Clear all refresh tokens on server start
+    await RefreshToken.destroy({
+      where: {},
+      truncate: true,
+    })
+
     connection = sequelize
     return connection
   } catch (error) {

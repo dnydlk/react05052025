@@ -1,5 +1,8 @@
 import authService from "../service/authService.js"
 
+const accessTokenExpireTime = 1000 * 10
+const refreshTokenExpireTime = 1000 * 60 * 60 * 24 * 7
+
 export const login = async (req, res) => {
   const { username, password } = req.body || {}
   try {
@@ -7,17 +10,17 @@ export const login = async (req, res) => {
     res
       .cookie("accessToken", token.accessToken, {
         httpOnly: true,
-        maxAge: 1000 * 10,
+        maxAge: accessTokenExpireTime,
       })
       .cookie("refreshToken", token.refreshToken, {
         httpOnly: true,
-        maxAge: 1000 * 60 * 60 * 24 * 7,
+        maxAge: refreshTokenExpireTime,
       })
       .status(200)
       .json({
         message: "Login successful",
         user,
-        tokens: token //![todo] Only for testing on Postman
+        tokens: token, //![todo] Only for testing on Postman
       })
   } catch (error) {
     console.error("Error: ", error.message)
@@ -49,5 +52,28 @@ export const logout = async (req, res) => {
       .clearCookie("refreshToken")
       .status(200)
       .json({ message: "Logged out successfully" })
+  }
+}
+
+export const refresh = async (req, res) => {
+  const refreshToken = req.cookies.refreshToken
+  if (!refreshToken) return res.status(401).json({ message: "Refresh token required" })
+
+  try {
+    const newAccessToken = await authService.refreshAccessToken(refreshToken)
+
+    res
+      .cookie("accessToken", newAccessToken, {
+        httpOnly: true,
+        maxAge: accessTokenExpireTime,
+      })
+      .status(200)
+      .json({
+        message: "New accessToken generated.",
+        refreshToken, //![todo] Only for testing on Postman
+      })
+  } catch (error) {
+    console.error("Refresh error:", error.message)
+    return res.status(403).json({ message: error.message })
   }
 }

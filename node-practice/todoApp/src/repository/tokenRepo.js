@@ -35,12 +35,10 @@ const deleteAllUserRefreshTokens = async (userId) => {
   })
 }
 
-const tokenRepo = {
+export const tokenRepo = {
   createRefreshToken,
   findRefreshToken,
   findRefreshTokenByUserIdAndToken,
   deleteRefreshToken,
   deleteAllUserRefreshTokens,
 }
-
-export default tokenRepo

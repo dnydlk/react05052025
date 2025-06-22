@@ -1,5 +1,5 @@
 import shortid from "shortid"
-import userRepo from "../repository/userRepo.js"
+import { userRepo } from "./index.js"
 import { hashPassword } from "../utils/bcrypt.js"
 
 export const createUser = async (user) => {

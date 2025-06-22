@@ -1,10 +1,12 @@
-import tokenRepo from "../repository/tokenRepo.js"
-import userRepo from "../repository/userRepo.js"
+import jwt from "jsonwebtoken"
+import dotenv from "dotenv"
+import { userRepo, tokenRepo } from "./index.js"
 import {
   comparePassword,
   generateAccessToken,
   generateRefreshToken,
 } from "../utils/index.js"
+dotenv.config()
 
 const login = async (username, password) => {
   // Find the user from DB
@@ -33,10 +35,43 @@ const logout = async (refreshToken) => {
   await tokenRepo.deleteRefreshToken(refreshToken)
 }
 
-const authService = { login, logout }
+const refreshAccessToken = async (refreshToken) => {
+  try {
+    const decoded = jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET)
+
+    // Check if refresh token exists in DB
+    const storedRefreshToken = await tokenRepo.findRefreshTokenByUserIdAndToken(
+      decoded.id,
+      refreshToken
+    )
+
+    if (!storedRefreshToken)
+      throw new Error("Invalid refresh token: not found in database")
+
+    console.log(
+      "📌 ~ authService.js:47 ~ refreshAccessToken ~ storedRefreshToken:\n\t",
+      storedRefreshToken.dataValues
+    )
+
+    // Check if refresh token is expired
+    if (storedRefreshToken.expires_at && new Date() > storedRefreshToken.expires_at) {
+      await tokenRepo.deleteRefreshToken(refreshToken)
+      throw new Error("Refresh token expired")
+    }
+
+    // Generate new access token
+    const userPayload = { id: decoded.id, username: decoded.username }
+    const newAccessToken = generateAccessToken(userPayload)
+
+    return newAccessToken
+  } catch (error) {
+    if (error.name === "JsonWebTokenError") {
+      throw new Error("Invalid refresh token")
+    }
+    throw error
+  }
+}
+
+const authService = { login, logout, refreshAccessToken }
 
 export default authService
-
-
-// // In refresh token function
-// const storedToken = await tokenRepo.findRefreshTokenByUserIdAndToken(decoded.id, refreshToken);

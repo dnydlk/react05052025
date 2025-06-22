@@ -1,5 +1,5 @@
 import { Router } from "express"
-import { login, logout } from "../controller/authController.js"
+import { login, logout, refresh } from "../controller/authController.js"
 
 export const authRoute = Router()
 
@@ -8,3 +8,6 @@ authRoute.post("/login", login)
 
 //- Log out
 authRoute.post("/logout", logout)
+
+//- Refresh token
+authRoute.post("/refresh", refresh)
