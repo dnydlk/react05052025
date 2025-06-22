@@ -1,15 +1,21 @@
 import express from "express"
 import jwt from "jsonwebtoken"
 import dotenv from "dotenv"
+import cookieParser from "cookie-parser"
+import cors from "cors"
 import { authenticateToken } from "./src/middlewares/jwt.js"
 import { posts, users } from "./src/database/index.js"
 import { generateAccessToken, hashPassword, comparePassword } from "./src/utils/index.js"
+dotenv.config()
 
 const app = express()
 const port = 3000
 
 app.use(express.json())
-dotenv.config()
+app.use(cookieParser())
+app.use(cors({ origin: "*" }))
+
+app.use("/auth", authRoute)
 
 // in-memory refresh token storage (temporarily)
 let refreshTokens = []
@@ -84,7 +90,7 @@ app.get("/users", (req, res) => {
 
 //- Get posts by current user
 app.get("/posts", authenticateToken, (req, res) => {
-  console.log("📌 ~ app.get ~ req.user:\n\t", req.user)
+  console.log("📌 ~ index.js:87 ~ app.get ~ req.user:\n\t", req.user)
   // return the posts created by current user only
   res.json(posts.filter((p) => p.username === req.user.name))
 })

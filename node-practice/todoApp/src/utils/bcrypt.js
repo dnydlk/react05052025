@@ -5,7 +5,7 @@ const saltRounds = 10
 export const hashPassword = async (password) => {
   try {
     const hash = await bcrypt.hash(password, saltRounds)
-    // console.log(`Hashed password: ${hash}`)
+    // console.log("📌 ~ bcrypt.js:8 ~ hashPassword ~ hash:\n\t", hash)
     return hash
   } catch (error) {
     console.error("Failed to hash password:", error)
@@ -15,7 +15,7 @@ export const hashPassword = async (password) => {
 export const comparePassword = async (password, hashedPassword) => {
   try {
     const result = await bcrypt.compare(password, hashedPassword)
-    console.log("📌 ~ comparePassword ~ result:", result)
+    console.log("📌 ~ bcrypt.js:18 ~ comparePassword ~ result:\n\t", result)
     return result
   } catch (error) {
     console.error("Failed to compare password:", error)
