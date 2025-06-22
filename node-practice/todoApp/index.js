@@ -6,16 +6,21 @@ import cors from "cors"
 import { authenticateToken } from "./src/middlewares/jwt.js"
 import { posts, users } from "./src/database/index.js"
 import { generateAccessToken, hashPassword, comparePassword } from "./src/utils/index.js"
+import { connectDatabase } from "./src/database/connection.js"
+
 dotenv.config()
 
+const port = process.env.PORT || 3000
+
+;(async () => {
+  await connectDatabase()
+})()
+
 const app = express()
-const port = 3000
 
 app.use(express.json())
 app.use(cookieParser())
 app.use(cors({ origin: "*" }))
-
-app.use("/auth", authRoute)
 
 // in-memory refresh token storage (temporarily)
 let refreshTokens = []
