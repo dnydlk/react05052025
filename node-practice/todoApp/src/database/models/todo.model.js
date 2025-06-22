@@ -1,6 +1,6 @@
 import { DataTypes } from "sequelize"
 
-export default (sequelize) => {
+export const todoModel = (sequelize) => {
   const Todo = sequelize.define(
     "Todo",
     {

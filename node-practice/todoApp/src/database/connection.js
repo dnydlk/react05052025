@@ -1,6 +1,5 @@
 import Sequelize from "sequelize"
-import userModel from "./models/user.model.js"
-import todoModel from "./models/todo.model.js"
+import { userModel, todoModel, refreshTokenModel } from "./models/index.js"
 
 // Set up Sequelize connection
 const sequelize = new Sequelize(
@@ -16,10 +15,13 @@ const sequelize = new Sequelize(
 // Define models
 const User = userModel(sequelize)
 const Todo = todoModel(sequelize)
+const RefreshToken = refreshTokenModel(sequelize)
 
 // Define associations
 User.hasMany(Todo, { foreignKey: "user_id", onDelete: "CASCADE" })
 Todo.belongsTo(User, { foreignKey: "user_id" })
+User.hasMany(RefreshToken, { foreignKey: "user_id", onDelete: "CASCADE" })
+RefreshToken.belongsTo(User, { foreignKey: "user_id" })
 
 let connection = null
 
@@ -41,4 +43,4 @@ export const connectDatabase = async () => {
   }
 }
 
-export { sequelize, User, Todo }
+export { sequelize, User, Todo, RefreshToken }
