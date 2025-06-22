@@ -1,4 +1,6 @@
 import Sequelize from "sequelize"
+import userModel from "./models/user.model.js"
+import todoModel from "./models/todo.model.js"
 
 const sequelize = new Sequelize(
   process.env.DB_DATABASE,
@@ -9,6 +11,12 @@ const sequelize = new Sequelize(
     dialect: "mysql",
   }
 )
+
+const User = userModel(sequelize)
+const Todo = todoModel(sequelize)
+
+User.hasMany(Todo, { foreignKey: "user_id", onDelete: "CASCADE" })
+Todo.belongsTo(User, { foreignKey: "user_id" })
 
 let connection = null
 
@@ -24,3 +32,5 @@ export const connectDatabase = async () => {
     throw error
   }
 }
+
+export { sequelize, User, Todo }
