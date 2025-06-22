@@ -2,6 +2,7 @@ import Sequelize from "sequelize"
 import userModel from "./models/user.model.js"
 import todoModel from "./models/todo.model.js"
 
+// Set up Sequelize connection
 const sequelize = new Sequelize(
   process.env.DB_DATABASE,
   process.env.DB_USERNAME,
@@ -12,9 +13,11 @@ const sequelize = new Sequelize(
   }
 )
 
+// Define models
 const User = userModel(sequelize)
 const Todo = todoModel(sequelize)
 
+// Define associations
 User.hasMany(Todo, { foreignKey: "user_id", onDelete: "CASCADE" })
 Todo.belongsTo(User, { foreignKey: "user_id" })
 
@@ -26,6 +29,7 @@ export const connectDatabase = async () => {
     await sequelize.authenticate()
     console.log("Connection has been established successfully.")
 
+    // Sync models with the database, will create tables if they do not exist
     await sequelize.sync()
     console.log("Database synced successfully.")
 

@@ -1,9 +1,7 @@
 import { Router } from "express"
 import { signup } from "../controller/userController.js"
 
-const router = Router()
+export const userRoute = Router()
 
 //- Sign up
-router.post("/", signup)
-
-export default router
+userRoute.post("/", signup)
