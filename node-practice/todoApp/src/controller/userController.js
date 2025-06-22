@@ -1,3 +1,5 @@
+import userService from "../service/userService.js"
+
 export const signup = async (req, res) => {
   const { username, email, password } = req.body
   if (!username || !email || !password) {
@@ -5,7 +7,7 @@ export const signup = async (req, res) => {
   }
 
   try {
-    // const userInfo = await createUser({username, email, password})
+    const userInfo = await userService.createUser({ username, email, password })
     res.status(201).json({
       message: "User registered successfully",
       user: userInfo,

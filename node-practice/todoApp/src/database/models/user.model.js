@@ -19,7 +19,7 @@ export default (sequelize) => {
         allowNull: false,
         unique: true,
       },
-      password_hash: {
+      password: {
         type: DataTypes.STRING(255),
         allowNull: false,
       },
@@ -31,6 +31,4 @@ export default (sequelize) => {
   )
 
   return User
-
-  return Todo
 }
