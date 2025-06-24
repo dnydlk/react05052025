@@ -1,11 +1,12 @@
 import jwt from "jsonwebtoken"
 import dotenv from "dotenv"
-import { userRepo, tokenRepo } from "./index.js"
 import {
   comparePassword,
   generateAccessToken,
   generateRefreshToken,
 } from "../utils/index.js"
+import userRepo from "../repository/userRepo.js"
+import tokenRepo from "../repository/tokenRepo.js"
 dotenv.config()
 
 const login = async (username, password) => {

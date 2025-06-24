@@ -1,12 +1,10 @@
 import express from "express"
-import jwt from "jsonwebtoken"
 import dotenv from "dotenv"
 import cookieParser from "cookie-parser"
 import cors from "cors"
-import { authenticateToken } from "./src/middlewares/jwt.js"
-import { generateAccessToken, hashPassword, comparePassword } from "./src/utils/index.js"
+import { authenticateToken } from "./src/middlewares/authentication.js"
 import { connectDatabase } from "./src/database/connection.js"
-import { userRoute, authRoute } from "./src/routes/index.js"
+import { userRoute, authRoute, todoRoute } from "./src/routes/index.js"
 
 dotenv.config()
 
@@ -22,41 +20,7 @@ const port = process.env.PORT || 3000
 
   app.use("/users", userRoute)
   app.use("/auth", authRoute)
+  app.use("/todos", todoRoute)
 
   app.listen(port, () => console.log(`Server listening on port ${port}`))
 })()
-
-// in-memory refresh token storage (temporarily)
-let refreshTokens = []
-
-//- Refresh access token
-// app.post("/token", (req, res) => {
-//   const refreshToken = req.body.refreshToken
-//   if (!refreshToken) return res.sendStatus(401)
-//   if (!refreshTokens.includes(refreshToken)) return res.sendStatus(403)
-//   jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET, (err, user) => {
-//     if (err) return res.sendStatus(403)
-//     const accessToken = generateAccessToken({ name: user.name })
-//     return res.json({ accessToken })
-//   })
-// })
-
-//- Log out
-// app.delete("/logout", (req, res) => {
-//   refreshTokens = refreshTokens.filter((t) => t !== req.body.refreshToken)
-//   res.sendStatus(204)
-// })
-
-//- Get all users
-// app.get("/users", (req, res) => {
-//   res.json(users)
-// })
-
-//- Get posts by current user
-// app.get("/posts", authenticateToken, (req, res) => {
-//   console.log("📌 ~ index.js:87 ~ app.get ~ req.user:\n\t", req.user)
-//   // return the posts created by current user only
-//   res.json(posts.filter((p) => p.username === req.user.name))
-// })
-
-// app.listen(port, () => console.log(`Server listening on port ${port}`))

@@ -5,9 +5,9 @@ export const todoModel = (sequelize) => {
     "Todo",
     {
       id: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING(20),
         primaryKey: true,
-        autoIncrement: true,
+        allowNull: false,
       },
       user_id: {
         type: DataTypes.STRING(20),
@@ -28,7 +28,7 @@ export const todoModel = (sequelize) => {
     },
     {
       tableName: "todos",
-      timestamps: false,
+      timestamps: true,
     }
   )
 

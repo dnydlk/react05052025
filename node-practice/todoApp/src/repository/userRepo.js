@@ -12,8 +12,10 @@ const createUser = async (userData) => {
   return await User.create(userData)
 }
 
-export const userRepo = {
+const userRepo = {
   getUserByUsername,
   getUserByEmail,
   createUser,
 }
+
+export default userRepo;
